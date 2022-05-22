@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/d_work/screens/work_desktop.dart';
-import 'package:portfolio/pages/d_work/screens/work_mobile.dart';
+import 'package:portfolio/screens/d_work/screens/work_desktop.dart';
+import 'package:portfolio/screens/d_work/screens/work_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class WorkMain extends StatelessWidget {

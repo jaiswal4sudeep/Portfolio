@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/b_about/screens/about_desktop.dart';
-import 'package:portfolio/pages/b_about/screens/about_mobile.dart';
+import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
+import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class AboutMain extends StatelessWidget {

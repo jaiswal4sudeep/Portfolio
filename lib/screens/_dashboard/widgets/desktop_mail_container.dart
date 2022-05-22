@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/app_constant.dart';
+import '../../../application/app_provider.dart';
 
-class DesktopMailContainer extends StatelessWidget {
+class DesktopMailContainer extends HookConsumerWidget {
   const DesktopMailContainer({
     Key? key,
     required this.width,
@@ -15,7 +16,7 @@ class DesktopMailContainer extends StatelessWidget {
   final double height;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       width: width * 0.0750,
       height: height,
@@ -23,11 +24,8 @@ class DesktopMailContainer extends StatelessWidget {
         children: [
           const Spacer(),
           GestureDetector(
-            onTap: () async {
-              if (await canLaunchUrl(
-                  Uri.parse(SocialMediaURLs.mailURL))) {
-                await launchUrl(Uri.parse(SocialMediaURLs.mailURL));
-              }
+            onTap: () {
+              ref.read(appProvider.notifier).openURL(SocialMediaURLs.mailURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),

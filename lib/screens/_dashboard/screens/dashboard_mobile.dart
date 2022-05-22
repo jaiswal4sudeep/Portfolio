@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/a_home/screens/home_mobile.dart';
-import 'package:portfolio/pages/b_about/screens/about_mobile.dart';
-import 'package:portfolio/pages/c_experience/screens/experience_mobile.dart';
-import 'package:portfolio/pages/d_work/screens/work_mobile.dart';
-import 'package:portfolio/pages/e_contact/screens/contact_mobile.dart';
-import '../widgets/mobile/mobile_drawer.dart';
+import 'package:portfolio/screens/a_home/screens/home_mobile.dart';
+import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
+import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
+import 'package:portfolio/screens/d_work/screens/work_mobile.dart';
+import 'package:portfolio/screens/e_contact/screens/contact_mobile.dart';
+import '../widgets/mobile_drawer.dart';
 
 class DashboardMobile extends StatelessWidget {
   const DashboardMobile({Key? key}) : super(key: key);

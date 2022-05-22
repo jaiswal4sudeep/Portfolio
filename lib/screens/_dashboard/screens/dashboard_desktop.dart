@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/a_home/screens/home_desktop.dart';
-import 'package:portfolio/pages/b_about/screens/about_desktop.dart';
-import 'package:portfolio/pages/c_experience/screens/experience_desktop.dart';
-import 'package:portfolio/pages/d_work/screens/work_desktop.dart';
-import 'package:portfolio/pages/e_contact/screens/contact_desktop.dart';
-import '../widgets/desktop/desktop_mail_container.dart';
-import '../widgets/desktop/desktop_navbar.dart';
-import '../widgets/desktop/desktop_socail_media_container.dart';
+import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
+import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
+import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
+import 'package:portfolio/screens/d_work/screens/work_desktop.dart';
+import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
+import '../widgets/desktop_mail_container.dart';
+import '../widgets/desktop_navbar.dart';
+import '../widgets/desktop_socail_media_container.dart';
 
 class DashboardDesktop extends StatelessWidget {
   const DashboardDesktop({Key? key}) : super(key: key);

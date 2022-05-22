@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/c_experience/screens/experience_desktop.dart';
-import 'package:portfolio/pages/c_experience/screens/experience_mobile.dart';
+import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
+import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ExperinceMain extends StatelessWidget {

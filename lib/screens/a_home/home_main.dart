@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/a_home/screens/home_desktop.dart';
+import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'screens/home_mobile.dart';

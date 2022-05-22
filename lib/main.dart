@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/pages/_dashboard/dashboard_main.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/screens/_dashboard/dashboard_main.dart';
 
 import 'core/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

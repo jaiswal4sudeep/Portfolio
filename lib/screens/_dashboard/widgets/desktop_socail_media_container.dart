@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
-
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/application/app_provider.dart';
 import '../../../../core/app_constant.dart';
 
-class DesktopSocialMediaContainer extends StatelessWidget {
+class DesktopSocialMediaContainer extends HookConsumerWidget {
   const DesktopSocialMediaContainer({
     Key? key,
     required this.width,
@@ -16,7 +16,7 @@ class DesktopSocialMediaContainer extends StatelessWidget {
   final double height;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       width: width * 0.0750,
       height: height,
@@ -24,10 +24,8 @@ class DesktopSocialMediaContainer extends StatelessWidget {
         children: [
           const Spacer(),
           GestureDetector(
-            onTap: () async {
-              if (await canLaunchUrl(Uri.parse(SocialMediaURLs.githubURL))) {
-                await launchUrl(Uri.parse(SocialMediaURLs.githubURL));
-              }
+            onTap: () {
+              ref.read(appProvider.notifier).openURL(SocialMediaURLs.githubURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -39,10 +37,10 @@ class DesktopSocialMediaContainer extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () async {
-              if (await canLaunchUrl(Uri.parse(SocialMediaURLs.linkedinURL))) {
-                await launchUrl(Uri.parse(SocialMediaURLs.linkedinURL));
-              }
+            onTap: () {
+              ref
+                  .read(appProvider.notifier)
+                  .openURL(SocialMediaURLs.linkedinURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -54,25 +52,10 @@ class DesktopSocialMediaContainer extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () async {
-              if (await canLaunchUrl(Uri.parse(SocialMediaURLs.callURL))) {
-                await launchUrl(Uri.parse(SocialMediaURLs.callURL));
-              }
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                FontAwesomeIcons.phone,
-                size: 16.sp,
-                color: AppConstant.titlecolor.withOpacity(0.25),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () async {
-              if (await canLaunchUrl(Uri.parse(SocialMediaURLs.twitterURL))) {
-                await launchUrl(Uri.parse(SocialMediaURLs.twitterURL));
-              }
+            onTap: () {
+              ref
+                  .read(appProvider.notifier)
+                  .openURL(SocialMediaURLs.twitterURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -84,10 +67,8 @@ class DesktopSocialMediaContainer extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () async {
-              if (await canLaunchUrl(Uri.parse(SocialMediaURLs.igURL))) {
-                await launchUrl(Uri.parse(SocialMediaURLs.igURL));
-              }
+            onTap: () {
+              ref.read(appProvider.notifier).openURL(SocialMediaURLs.igURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),

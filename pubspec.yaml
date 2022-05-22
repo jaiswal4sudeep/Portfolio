@@ -40,10 +40,13 @@ dependencies:
   
   google_fonts: ^2.3.2
   
-  flutter_hooks: ^0.18.4
   url_launcher: ^6.1.2
   animated_text_kit: ^4.2.1
   font_awesome_flutter: ^10.1.0
+
+  hooks_riverpod: ^1.0.4
+  flutter_hooks: ^0.18.4
+
 
 dev_dependencies:
   flutter_test:
