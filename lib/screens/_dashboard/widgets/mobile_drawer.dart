@@ -18,77 +18,63 @@ class MobileDrawer extends StatelessWidget {
       backgroundColor: AppConstant.backgroundColor,
       child: Column(
         children: [
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              primary: AppConstant.titlecolor,
-            ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Home'),
-            ),
+          SizedBox(
+            height: 40.h,
           ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              primary: AppConstant.titlecolor,
+          ListTile(
+            title: Text(
+              'Home',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('About'),
-            ),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              primary: AppConstant.titlecolor,
+          ListTile(
+            title: Text(
+              'About',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Experience'),
-            ),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              primary: AppConstant.titlecolor,
+          ListTile(
+            title: Text(
+              'Experience',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Work'),
-            ),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              primary: AppConstant.titlecolor,
+          ListTile(
+            title: Text(
+              'Work',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Contact'),
-            ),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  side: BorderSide(
-                    color: AppConstant.primaryColor,
-                    width: 1.sp,
-                  ),
-                ),
+          ListTile(
+            title: Text(
+              'Contact',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: AppConstant.primaryColor,
+                textStyle: Theme.of(context).textTheme.headline4,
               ),
-            ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Resume',
-                style: TextStyle(
-                  color: AppConstant.titlecolor,
-                ),
-              ),
+              child: const Text('Resume'),
             ),
           ),
         ],

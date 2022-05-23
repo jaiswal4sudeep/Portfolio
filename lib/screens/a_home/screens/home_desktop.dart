@@ -6,13 +6,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/app_constant.dart';
 
 class HomeDesktop extends StatelessWidget {
-  const HomeDesktop({Key? key}) : super(key: key);
-
+  const HomeDesktop({Key? key, required this.width, required this.height})
+      : super(key: key);
+  final double width;
+  final double height;
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
     return SizedBox(
       height: height - 64,
       width: width,
@@ -76,7 +75,7 @@ class HomeDesktop extends StatelessWidget {
             height: 20.h,
           ),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: Container(
               decoration: ShapeDecoration(
                 shape: StadiumBorder(

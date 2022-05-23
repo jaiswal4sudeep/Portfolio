@@ -35,7 +35,7 @@ class DesktopMailContainer extends HookConsumerWidget {
                   'jaiswal4sudeep@gmail.com',
                   style: Theme.of(context).textTheme.headline6!.copyWith(
                         letterSpacing: 2.sp,
-                        color: AppConstant.titlecolor.withOpacity(0.25),
+                        color: AppConstant.preBGColor,
                       ),
                 ),
               ),
@@ -44,7 +44,7 @@ class DesktopMailContainer extends HookConsumerWidget {
           Container(
             width: 0.5.w,
             height: 100.h,
-            color: AppConstant.titlecolor.withOpacity(0.25),
+            color: AppConstant.preBGColor,
           ),
         ],
       ),

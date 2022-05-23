@@ -7,13 +7,21 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'screens/home_mobile.dart';
 
 class HomeMain extends StatelessWidget {
-  const HomeMain({Key? key}) : super(key: key);
-
+  const HomeMain({Key? key, required this.width, required this.height})
+      : super(key: key);
+  final double width;
+  final double height;
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: const HomeMobile(),
-      desktop: const HomeDesktop(),
+      mobile: HomeMobile(
+        height: height,
+        width: width,
+      ),
+      desktop: HomeDesktop(
+        height: height,
+        width: width,
+      ),
     );
   }
 }

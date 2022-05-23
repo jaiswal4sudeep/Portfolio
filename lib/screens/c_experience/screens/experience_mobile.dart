@@ -3,13 +3,12 @@
 import 'package:flutter/material.dart';
 
 class ExperienceMobile extends StatelessWidget {
-  const ExperienceMobile({Key? key}) : super(key: key);
-
+  const ExperienceMobile({Key? key, required this.width, required this.height})
+      : super(key: key);
+  final double width;
+  final double height;
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
     return SizedBox(
       child: Text(
         'ExperienceMobile',

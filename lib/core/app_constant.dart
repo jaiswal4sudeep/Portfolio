@@ -5,6 +5,7 @@ mixin AppConstant {
   static const Color subtitlecolor = Color.fromRGBO(166, 177, 187, 1);
   static const Color primaryColor = Color.fromRGBO(21, 181, 114, 1);
   static const Color backgroundColor = Color.fromRGBO(7, 17, 26, 1);
+  static const Color preBGColor = Color.fromRGBO(69, 77, 83, 1);
 }
 
 mixin SocialMediaURLs {

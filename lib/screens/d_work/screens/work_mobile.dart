@@ -3,13 +3,12 @@
 import 'package:flutter/material.dart';
 
 class WorkMobile extends StatelessWidget {
-  const WorkMobile({Key? key}) : super(key: key);
-
+  const WorkMobile({Key? key, required this.width, required this.height})
+      : super(key: key);
+  final double width;
+  final double height;
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
     return SizedBox(
       child: Text(
         'WorkMobile',

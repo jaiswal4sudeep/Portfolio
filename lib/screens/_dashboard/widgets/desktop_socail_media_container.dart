@@ -32,7 +32,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
               child: Icon(
                 FontAwesomeIcons.github,
                 size: 16.sp,
-                color: AppConstant.titlecolor.withOpacity(0.25),
+                color: AppConstant.preBGColor,
               ),
             ),
           ),
@@ -47,7 +47,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
               child: Icon(
                 FontAwesomeIcons.linkedinIn,
                 size: 16.sp,
-                color: AppConstant.titlecolor.withOpacity(0.25),
+                color: AppConstant.preBGColor,
               ),
             ),
           ),
@@ -62,7 +62,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
               child: Icon(
                 FontAwesomeIcons.twitter,
                 size: 16.sp,
-                color: AppConstant.titlecolor.withOpacity(0.25),
+                color: AppConstant.preBGColor,
               ),
             ),
           ),
@@ -75,14 +75,14 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
               child: Icon(
                 FontAwesomeIcons.instagram,
                 size: 16.sp,
-                color: AppConstant.titlecolor.withOpacity(0.25),
+                color: AppConstant.preBGColor,
               ),
             ),
           ),
           Container(
             width: 0.5.w,
             height: 100.h,
-            color: AppConstant.titlecolor.withOpacity(0.25),
+            color: AppConstant.preBGColor,
           ),
         ],
       ),

@@ -7,13 +7,21 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'screens/contact_mobile.dart';
 
 class ContactMain extends StatelessWidget {
-  const ContactMain({Key? key}) : super(key: key);
-
+  const ContactMain({Key? key, required this.height, required this.width})
+      : super(key: key);
+  final double height;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: const ContactMobile(),
-      desktop: const ContactDesktop(),
+      mobile: ContactMobile(
+        height: height,
+        width: width,
+      ),
+      desktop: ContactDesktop(
+        height: height,
+        width: width,
+      ),
     );
   }
 }
