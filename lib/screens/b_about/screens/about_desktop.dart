@@ -10,9 +10,12 @@ class AboutDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Text(
-        'AboutDesktop',
-        style: Theme.of(context).textTheme.headline1,
+      height: 400,
+      child: Center(
+        child: Text(
+          'AboutDesktop',
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ),
     );
   }

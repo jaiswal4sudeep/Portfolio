@@ -1,23 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/core/app_constant.dart';
 import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
 import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
 import 'package:portfolio/screens/d_work/screens/work_desktop.dart';
 import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import '../widgets/desktop_mail_container.dart';
 import '../widgets/desktop_navbar.dart';
 import '../widgets/desktop_socail_media_container.dart';
 
 class DashboardDesktop extends HookWidget {
-  const DashboardDesktop(this.width, this.height, {Key? key}) : super(key: key);
+  const DashboardDesktop(
+    this.width,
+    this.height, {
+    Key? key,
+  }) : super(
+          key: key,
+        );
   final double width;
   final double height;
 
   @override
   Widget build(BuildContext context) {
+    AutoScrollController controller = AutoScrollController(
+      viewportBoundaryGetter: () => Rect.fromLTRB(
+        0,
+        0,
+        0,
+        MediaQuery.of(context).padding.bottom,
+      ),
+      axis: Axis.vertical,
+    );
+
     return Stack(
       children: [
         SizedBox(
@@ -91,13 +109,44 @@ class DashboardDesktop extends HookWidget {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            title: Image.asset(
-              'assets/images/PortfolioLogoSmall.png',
-              height: 50.sp,
+            title: GestureDetector(
+              onTap: () {
+                controller.scrollToIndex(
+                  0,
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                  preferPosition: AutoScrollPosition.begin,
+                );
+              },
+              child: Row(
+                children: [
+                  Text(
+                    '<',
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                  Text(
+                    ' Sudeep ',
+                    style: GoogleFonts.allura(
+                      fontSize: 20.sp,
+                    ),
+                  ),
+                  Text(
+                    '/>',
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                ],
+              ),
             ),
             elevation: 0,
-            actions: const [
-              DesktopNavBar(),
+            actions: [
+              DesktopNavbar(
+                controller: controller,
+              ),
             ],
           ),
           body: Row(
@@ -114,27 +163,53 @@ class DashboardDesktop extends HookWidget {
                     scrollbars: false,
                   ),
                   child: ListView(
+                    controller: controller,
                     physics: const BouncingScrollPhysics(),
                     children: [
-                      HomeDesktop(
-                        height: height,
-                        width: width,
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 0,
+                        key: const ValueKey(0),
+                        child: HomeDesktop(
+                          height: height,
+                          width: width,
+                        ),
                       ),
-                      AboutDesktop(
-                        height: height,
-                        width: width,
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 1,
+                        key: const ValueKey(1),
+                        child: AboutDesktop(
+                          height: height,
+                          width: width,
+                        ),
                       ),
-                      ExperienceDesktop(
-                        height: height,
-                        width: width,
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 2,
+                        key: const ValueKey(2),
+                        child: ExperienceDesktop(
+                          height: height,
+                          width: width,
+                        ),
                       ),
-                      WorkDesktop(
-                        height: height,
-                        width: width,
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 3,
+                        key: const ValueKey(3),
+                        child: WorkDesktop(
+                          height: height,
+                          width: width,
+                        ),
                       ),
-                      ContactDesktop(
-                        height: height,
-                        width: width,
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 4,
+                        key: const ValueKey(4),
+                        child: ContactDesktop(
+                          height: height,
+                          width: width,
+                        ),
                       ),
                     ],
                   ),
@@ -145,6 +220,22 @@ class DashboardDesktop extends HookWidget {
                 height: height,
               ),
             ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: AppConstant.primaryColor,
+            onPressed: () {
+              controller.scrollToIndex(
+                0,
+                duration: const Duration(
+                  seconds: 2,
+                ),
+                preferPosition: AutoScrollPosition.begin,
+              );
+            },
+            child: Icon(
+              Icons.keyboard_arrow_up_rounded,
+              size: 24.sp,
+            ),
           ),
         ),
       ],

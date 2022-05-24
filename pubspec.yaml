@@ -37,17 +37,16 @@ dependencies:
 
   flutter_screenutil: ^5.5.3+1
   responsive_builder: ^0.4.2
-  
+  font_awesome_flutter: ^10.1.0  
   google_fonts: ^2.3.2
+  lottie: ^1.3.0
+  animated_text_kit: ^4.2.1
   
   url_launcher: ^6.1.2
-  animated_text_kit: ^4.2.1
-  font_awesome_flutter: ^10.1.0
+  scroll_to_index: ^3.0.1
 
   hooks_riverpod: ^1.0.4
   flutter_hooks: ^0.18.4
-  lottie: ^1.3.0
-
 
 dev_dependencies:
   flutter_test:

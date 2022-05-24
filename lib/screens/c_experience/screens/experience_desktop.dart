@@ -10,9 +10,12 @@ class ExperienceDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Text(
-        'ExperienceDesktop',
-        style: Theme.of(context).textTheme.headline1,
+      height: height,
+      child: Center(
+        child: Text(
+          'ExperienceDesktop',
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ),
     );
   }

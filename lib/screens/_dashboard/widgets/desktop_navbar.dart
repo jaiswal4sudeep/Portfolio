@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
+import '../../../core/app_constant.dart';
 
-import '../../../../core/app_constant.dart';
-
-class DesktopNavBar extends StatelessWidget {
-  const DesktopNavBar({
+class DesktopNavbar extends StatelessWidget {
+  const DesktopNavbar({
     Key? key,
+    required this.controller,
   }) : super(key: key);
+
+  final AutoScrollController controller;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.scrollToIndex(
+              0,
+              duration: const Duration(
+                seconds: 2,
+              ),
+              preferPosition: AutoScrollPosition.begin,
+            );
+          },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
           ),
@@ -23,7 +34,15 @@ class DesktopNavBar extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.scrollToIndex(
+              1,
+              duration: const Duration(
+                seconds: 2,
+              ),
+              preferPosition: AutoScrollPosition.begin,
+            );
+          },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
           ),
@@ -33,7 +52,15 @@ class DesktopNavBar extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.scrollToIndex(
+              2,
+              duration: const Duration(
+                seconds: 2,
+              ),
+              preferPosition: AutoScrollPosition.begin,
+            );
+          },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
           ),
@@ -43,7 +70,15 @@ class DesktopNavBar extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.scrollToIndex(
+              3,
+              duration: const Duration(
+                seconds: 2,
+              ),
+              preferPosition: AutoScrollPosition.begin,
+            );
+          },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
           ),
@@ -53,7 +88,15 @@ class DesktopNavBar extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.scrollToIndex(
+              4,
+              duration: const Duration(
+                seconds: 2,
+              ),
+              preferPosition: AutoScrollPosition.begin,
+            );
+          },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
           ),

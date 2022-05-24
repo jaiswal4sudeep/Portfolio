@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/screens/_dashboard/dashboard_main.dart';
-import 'package:portfolio/splash_screen/splash_screen.dart';
-
 import 'core/app_theme.dart';
 
 void main() {

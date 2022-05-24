@@ -1,5 +1,3 @@
-// ignore_for_file: unused_local_variable
-
 import 'package:flutter/material.dart';
 
 class HomeMobile extends StatelessWidget {
@@ -10,9 +8,12 @@ class HomeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Text(
-        'HomeMobile',
-        style: Theme.of(context).textTheme.headline1,
+      height: 300,
+      child: Center(
+        child: Text(
+          'HomeMobile',
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ),
     );
   }
