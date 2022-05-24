@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/screens/_dashboard/application/scroll_provider.dart';
 import 'package:portfolio/screens/a_home/screens/home_mobile.dart';
 import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
@@ -10,7 +12,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 import '../widgets/mobile_drawer.dart';
 
-class DashboardMobile extends StatelessWidget {
+class DashboardMobile extends HookConsumerWidget {
   const DashboardMobile({
     Key? key,
     required this.width,
@@ -19,7 +21,7 @@ class DashboardMobile extends StatelessWidget {
   final double width;
   final double height;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     AutoScrollController controller = AutoScrollController(
       viewportBoundaryGetter: () => Rect.fromLTRB(
         0,
@@ -65,13 +67,7 @@ class DashboardMobile extends StatelessWidget {
             backgroundColor: Colors.transparent,
             title: GestureDetector(
               onTap: () {
-                controller.scrollToIndex(
-                  0,
-                  duration: const Duration(
-                    seconds: 2,
-                  ),
-                  preferPosition: AutoScrollPosition.begin,
-                );
+                ref.read(scrollProvider.notifier).scollToIndex(0, controller);
               },
               child: Row(
                 children: [
@@ -163,13 +159,7 @@ class DashboardMobile extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             backgroundColor: AppConstant.primaryColor,
             onPressed: () {
-              controller.scrollToIndex(
-                0,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(0, controller);
             },
             child: Icon(
               Icons.keyboard_arrow_up_rounded,

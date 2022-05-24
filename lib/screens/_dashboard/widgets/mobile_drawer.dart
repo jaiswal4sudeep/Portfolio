@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/screens/_dashboard/application/scroll_provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-
 import '../../../core/app_constant.dart';
 
-class MobileDrawer extends StatelessWidget {
+class MobileDrawer extends HookConsumerWidget {
   const MobileDrawer({
     Key? key,
     required this.width,
@@ -15,7 +16,7 @@ class MobileDrawer extends StatelessWidget {
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Drawer(
       width: width * 0.6,
       backgroundColor: AppConstant.backgroundColor,
@@ -30,13 +31,7 @@ class MobileDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              controller.scrollToIndex(
-                0,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(0, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -46,13 +41,7 @@ class MobileDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              controller.scrollToIndex(
-                1,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(1, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -62,13 +51,7 @@ class MobileDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              controller.scrollToIndex(
-                2,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(2, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -78,13 +61,7 @@ class MobileDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              controller.scrollToIndex(
-                3,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(3, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -94,13 +71,7 @@ class MobileDrawer extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              controller.scrollToIndex(
-                4,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(4, controller);
               Navigator.of(context).pop();
             },
           ),

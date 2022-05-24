@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
+import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
 import '../../../../core/app_constant.dart';
-import '../../../application/app_provider.dart';
 
 class DesktopMailContainer extends HookConsumerWidget {
   const DesktopMailContainer({
@@ -25,7 +24,7 @@ class DesktopMailContainer extends HookConsumerWidget {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              ref.read(appProvider.notifier).openURL(SocialMediaURLs.mailURL);
+              ref.read(urlProvider.notifier).openURL(SocialMediaURLs.mailURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),

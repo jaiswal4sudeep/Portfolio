@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/core/app_constant.dart';
 import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
 import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
@@ -9,11 +9,12 @@ import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
 import 'package:portfolio/screens/d_work/screens/work_desktop.dart';
 import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import '../application/scroll_provider.dart';
 import '../widgets/desktop_mail_container.dart';
 import '../widgets/desktop_navbar.dart';
 import '../widgets/desktop_socail_media_container.dart';
 
-class DashboardDesktop extends HookWidget {
+class DashboardDesktop extends HookConsumerWidget {
   const DashboardDesktop(
     this.width,
     this.height, {
@@ -25,16 +26,16 @@ class DashboardDesktop extends HookWidget {
   final double height;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     AutoScrollController controller = AutoScrollController(
-      viewportBoundaryGetter: () => Rect.fromLTRB(
-        0,
-        0,
-        0,
-        MediaQuery.of(context).padding.bottom,
-      ),
-      axis: Axis.vertical,
-    );
+        // viewportBoundaryGetter: () => Rect.fromLTRB(
+        //   0,
+        //   0,
+        //   0,
+        //   MediaQuery.of(context).padding.bottom,
+        // ),
+        // axis: Axis.vertical,
+        );
 
     return Stack(
       children: [
@@ -111,13 +112,7 @@ class DashboardDesktop extends HookWidget {
             backgroundColor: Colors.transparent,
             title: GestureDetector(
               onTap: () {
-                controller.scrollToIndex(
-                  0,
-                  duration: const Duration(
-                    seconds: 2,
-                  ),
-                  preferPosition: AutoScrollPosition.begin,
-                );
+                ref.read(scrollProvider.notifier).scollToIndex(0, controller);
               },
               child: Row(
                 children: [
@@ -224,13 +219,7 @@ class DashboardDesktop extends HookWidget {
           floatingActionButton: FloatingActionButton(
             backgroundColor: AppConstant.primaryColor,
             onPressed: () {
-              controller.scrollToIndex(
-                0,
-                duration: const Duration(
-                  seconds: 2,
-                ),
-                preferPosition: AutoScrollPosition.begin,
-              );
+              ref.read(scrollProvider.notifier).scollToIndex(0, controller);
             },
             child: Icon(
               Icons.keyboard_arrow_up_rounded,

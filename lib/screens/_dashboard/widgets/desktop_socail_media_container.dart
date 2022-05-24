@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/application/app_provider.dart';
+import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
 import '../../../../core/app_constant.dart';
 
 class DesktopSocialMediaContainer extends HookConsumerWidget {
@@ -25,7 +25,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              ref.read(appProvider.notifier).openURL(SocialMediaURLs.githubURL);
+              ref.read(urlProvider.notifier).openURL(SocialMediaURLs.githubURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -39,7 +39,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
           GestureDetector(
             onTap: () {
               ref
-                  .read(appProvider.notifier)
+                  .read(urlProvider.notifier)
                   .openURL(SocialMediaURLs.linkedinURL);
             },
             child: Padding(
@@ -54,7 +54,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
           GestureDetector(
             onTap: () {
               ref
-                  .read(appProvider.notifier)
+                  .read(urlProvider.notifier)
                   .openURL(SocialMediaURLs.twitterURL);
             },
             child: Padding(
@@ -68,7 +68,7 @@ class DesktopSocialMediaContainer extends HookConsumerWidget {
           ),
           GestureDetector(
             onTap: () {
-              ref.read(appProvider.notifier).openURL(SocialMediaURLs.igURL);
+              ref.read(urlProvider.notifier).openURL(SocialMediaURLs.igURL);
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
