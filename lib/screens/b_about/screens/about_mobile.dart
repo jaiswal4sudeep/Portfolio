@@ -73,12 +73,9 @@ class AboutMobile extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
-                  ),
+                  padding: const EdgeInsets.all(8.0),
                   child: SkillMeter(
-                    meterValue: 280.sp,
+                    meterValue: 180.w,
                   ),
                 ),
                 Padding(
@@ -94,17 +91,14 @@ class AboutMobile extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
-                  ),
+                  padding: const EdgeInsets.all(8.0),
                   child: SkillMeter(
-                    meterValue: 330.sp,
+                    meterValue: 200.w,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
+                    horizontal: 8.0,
                     vertical: 8.0,
                   ),
                   child: Text(
@@ -115,12 +109,9 @@ class AboutMobile extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
-                  ),
+                  padding: const EdgeInsets.all(8.0),
                   child: SkillMeter(
-                    meterValue: 370.sp,
+                    meterValue: 225.w,
                   ),
                 ),
                 Padding(
@@ -136,12 +127,9 @@ class AboutMobile extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
-                  ),
+                  padding: const EdgeInsets.all(8.0),
                   child: SkillMeter(
-                    meterValue: 350.sp,
+                    meterValue: 160.w,
                   ),
                 ),
                 SizedBox(

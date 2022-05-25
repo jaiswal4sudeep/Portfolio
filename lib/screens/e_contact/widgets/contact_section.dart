@@ -193,8 +193,6 @@ class ContactSection extends StatelessWidget {
                           vertical: 12.0,
                         ),
                         child: SizedBox(
-                          width: 120.sp,
-                          height: 30.sp,
                           child: TextButton(
                             onPressed: () {
                               if (formkey.currentState!.validate()) {
@@ -202,6 +200,10 @@ class ContactSection extends StatelessWidget {
                               }
                             },
                             style: ButtonStyle(
+                              overlayColor: MaterialStateColor.resolveWith(
+                                (states) =>
+                                    AppConstant.primaryColor.withOpacity(0.2),
+                              ),
                               shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(1.0),

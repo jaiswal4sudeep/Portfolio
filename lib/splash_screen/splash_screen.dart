@@ -17,10 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigatetoLogIn();
+    navigatetoDashboard();
   }
 
-  _navigatetoLogIn() async {
+  navigatetoDashboard() async {
     await Future.delayed(
       const Duration(
         seconds: 2,
@@ -38,23 +38,25 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConstant.backgroundColor,
-      body: Stack(
-        children: [
-          Center(
-            child: Lottie.asset(
-              'assets/animation/splashAnimation.json',
-              height: MediaQuery.of(context).size.height,
-              fit: BoxFit.fitWidth,
-              repeat: false,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Center(
+              child: Lottie.asset(
+                'assets/animation/splashAnimation.json',
+                height: MediaQuery.of(context).size.height,
+                fit: BoxFit.fitWidth,
+                repeat: false,
+              ),
             ),
-          ),
-          Center(
-            child: Image.asset(
-              'assets/images/PortfolioLogoTransparent.png',
-              height: 180.sp,
+            Center(
+              child: Image.asset(
+                'assets/images/PortfolioLogoTransparent.png',
+                height: 180.sp,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

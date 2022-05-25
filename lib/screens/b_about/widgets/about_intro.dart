@@ -8,7 +8,7 @@ class AboutIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 520.sp,
+      width: 520.w,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(

@@ -83,6 +83,9 @@ class DesktopNavbar extends HookConsumerWidget {
         TextButton(
           onPressed: () {},
           style: ButtonStyle(
+            overlayColor: MaterialStateColor.resolveWith(
+              (states) => AppConstant.primaryColor.withOpacity(0.2),
+            ),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),

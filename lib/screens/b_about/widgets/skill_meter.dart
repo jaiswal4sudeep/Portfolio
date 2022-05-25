@@ -5,7 +5,8 @@ import '../../../core/app_constant.dart';
 
 class SkillMeter extends StatelessWidget {
   const SkillMeter({
-    Key? key, required this.meterValue,
+    Key? key,
+    required this.meterValue,
   }) : super(key: key);
   final double meterValue;
   @override

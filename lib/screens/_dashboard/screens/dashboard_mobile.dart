@@ -112,6 +112,7 @@ class DashboardMobile extends HookConsumerWidget {
                     index: 0,
                     key: const ValueKey(0),
                     child: HomeMobile(
+                      controller: controller,
                       height: height,
                       width: width,
                     ),
