@@ -14,10 +14,7 @@ class ContactMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: ContactMobile(
-        height: height,
-        width: width,
-      ),
+      mobile: const ContactMobile(),
       desktop: ContactDesktop(
         height: height,
         width: width,

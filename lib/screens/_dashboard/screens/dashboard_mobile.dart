@@ -23,14 +23,14 @@ class DashboardMobile extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AutoScrollController controller = AutoScrollController(
-      viewportBoundaryGetter: () => Rect.fromLTRB(
-        0,
-        0,
-        0,
-        MediaQuery.of(context).padding.bottom,
-      ),
-      axis: Axis.vertical,
-    );
+        // viewportBoundaryGetter: () => Rect.fromLTRB(
+        //   0,
+        //   0,
+        //   0,
+        //   MediaQuery.of(context).padding.bottom,
+        // ),
+        // axis: Axis.vertical,
+        );
     return Stack(
       children: [
         SizedBox(
@@ -120,10 +120,7 @@ class DashboardMobile extends HookConsumerWidget {
                     controller: controller,
                     index: 1,
                     key: const ValueKey(1),
-                    child: AboutMobile(
-                      height: height,
-                      width: width,
-                    ),
+                    child: const AboutMobile(),
                   ),
                   AutoScrollTag(
                     controller: controller,
@@ -147,10 +144,7 @@ class DashboardMobile extends HookConsumerWidget {
                     controller: controller,
                     index: 4,
                     key: const ValueKey(4),
-                    child: ContactMobile(
-                      height: height,
-                      width: width,
-                    ),
+                    child: const ContactMobile(),
                   ),
                 ],
               ),

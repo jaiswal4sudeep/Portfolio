@@ -174,10 +174,7 @@ class DashboardDesktop extends HookConsumerWidget {
                         controller: controller,
                         index: 1,
                         key: const ValueKey(1),
-                        child: AboutDesktop(
-                          height: height,
-                          width: width,
-                        ),
+                        child: const AboutDesktop(),
                       ),
                       AutoScrollTag(
                         controller: controller,

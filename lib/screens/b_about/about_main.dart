@@ -6,21 +6,14 @@ import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class AboutMain extends StatelessWidget {
-  const AboutMain({Key? key, required this.height, required this.width})
+  const AboutMain({Key? key, })
       : super(key: key);
-  final double height;
-  final double width;
+ 
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: AboutMobile(
-        height: height,
-        width: width,
-      ),
-      desktop: AboutDesktop(
-        height: height,
-        width: width,
-      ),
+      mobile: const AboutMobile(),
+      desktop: const AboutDesktop(),
     );
   }
 }
