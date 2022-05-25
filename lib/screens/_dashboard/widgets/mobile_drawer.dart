@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/screens/_dashboard/application/scroll_provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
+import '../application/scroll_to_index.dart';
 
-class MobileDrawer extends HookConsumerWidget {
+class MobileDrawer extends StatelessWidget {
   const MobileDrawer({
     Key? key,
     required this.width,
@@ -16,7 +15,7 @@ class MobileDrawer extends HookConsumerWidget {
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Drawer(
       width: width * 0.6,
       backgroundColor: AppConstant.backgroundColor,
@@ -31,7 +30,7 @@ class MobileDrawer extends HookConsumerWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              ref.read(scrollProvider.notifier).scollToIndex(0, controller);
+              scollToIndex(0, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -41,7 +40,7 @@ class MobileDrawer extends HookConsumerWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              ref.read(scrollProvider.notifier).scollToIndex(1, controller);
+              scollToIndex(1, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -51,7 +50,7 @@ class MobileDrawer extends HookConsumerWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              ref.read(scrollProvider.notifier).scollToIndex(2, controller);
+              scollToIndex(2, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -61,7 +60,7 @@ class MobileDrawer extends HookConsumerWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              ref.read(scrollProvider.notifier).scollToIndex(3, controller);
+              scollToIndex(3, controller);
               Navigator.of(context).pop();
             },
           ),
@@ -71,7 +70,7 @@ class MobileDrawer extends HookConsumerWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
-              ref.read(scrollProvider.notifier).scollToIndex(4, controller);
+              scollToIndex(4, controller);
               Navigator.of(context).pop();
             },
           ),

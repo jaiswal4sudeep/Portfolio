@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/core/app_constant.dart';
 import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
 import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
@@ -9,12 +10,12 @@ import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
 import 'package:portfolio/screens/d_work/screens/work_desktop.dart';
 import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import '../application/scroll_provider.dart';
+import '../application/scroll_to_index.dart';
 import '../widgets/desktop_mail_container.dart';
 import '../widgets/desktop_navbar.dart';
 import '../widgets/desktop_socail_media_container.dart';
 
-class DashboardDesktop extends HookConsumerWidget {
+class DashboardDesktop extends HookWidget {
   const DashboardDesktop(
     this.width,
     this.height, {
@@ -26,7 +27,7 @@ class DashboardDesktop extends HookConsumerWidget {
   final double height;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     AutoScrollController controller = AutoScrollController(
         // viewportBoundaryGetter: () => Rect.fromLTRB(
         //   0,
@@ -36,6 +37,7 @@ class DashboardDesktop extends HookConsumerWidget {
         // ),
         // axis: Axis.vertical,
         );
+    final hideFab = useState<bool>(true);
 
     return Stack(
       children: [
@@ -112,7 +114,7 @@ class DashboardDesktop extends HookConsumerWidget {
             backgroundColor: Colors.transparent,
             title: GestureDetector(
               onTap: () {
-                ref.read(scrollProvider.notifier).scollToIndex(0, controller);
+                scollToIndex(0, controller);
               },
               child: Row(
                 children: [
@@ -144,83 +146,97 @@ class DashboardDesktop extends HookConsumerWidget {
               ),
             ],
           ),
-          body: Row(
-            children: [
-              DesktopSocialMediaContainer(
-                width: width,
-                height: height,
-              ),
-              SizedBox(
-                width: width * 0.850,
-                height: height,
-                child: ScrollConfiguration(
-                  behavior: ScrollConfiguration.of(context).copyWith(
-                    scrollbars: false,
-                  ),
-                  child: ListView(
-                    controller: controller,
-                    physics: const BouncingScrollPhysics(),
-                    children: [
-                      AutoScrollTag(
-                        controller: controller,
-                        index: 0,
-                        key: const ValueKey(0),
-                        child: HomeDesktop(
+          body: NotificationListener<UserScrollNotification>(
+            onNotification: (notification) {
+              final ScrollDirection direction = notification.direction;
+              if (direction == ScrollDirection.reverse) {
+                hideFab.value = false;
+              } else if (direction == ScrollDirection.forward) {
+                hideFab.value = true;
+              }
+              return true;
+            },
+            child: Row(
+              children: [
+                DesktopSocialMediaContainer(
+                  width: width,
+                  height: height,
+                ),
+                SizedBox(
+                  width: width * 0.850,
+                  height: height,
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(context).copyWith(
+                      scrollbars: false,
+                    ),
+                    child: ListView(
+                      controller: controller,
+                      physics: const BouncingScrollPhysics(),
+                      children: [
+                        AutoScrollTag(
                           controller: controller,
-                          height: height,
-                          width: width,
+                          index: 0,
+                          key: const ValueKey(0),
+                          child: HomeDesktop(
+                            controller: controller,
+                            height: height,
+                            width: width,
+                          ),
                         ),
-                      ),
-                      AutoScrollTag(
-                        controller: controller,
-                        index: 1,
-                        key: const ValueKey(1),
-                        child: const AboutDesktop(),
-                      ),
-                      AutoScrollTag(
-                        controller: controller,
-                        index: 2,
-                        key: const ValueKey(2),
-                        child: ExperienceDesktop(
-                          height: height,
-                          width: width,
+                        AutoScrollTag(
+                          controller: controller,
+                          index: 1,
+                          key: const ValueKey(1),
+                          child: const AboutDesktop(),
                         ),
-                      ),
-                      AutoScrollTag(
-                        controller: controller,
-                        index: 3,
-                        key: const ValueKey(3),
-                        child: WorkDesktop(
-                          height: height,
-                          width: width,
+                        AutoScrollTag(
+                          controller: controller,
+                          index: 2,
+                          key: const ValueKey(2),
+                          child: ExperienceDesktop(
+                            height: height,
+                            width: width,
+                          ),
                         ),
-                      ),
-                      AutoScrollTag(
-                        controller: controller,
-                        index: 4,
-                        key: const ValueKey(4),
-                        child: const ContactDesktop(),
-                      ),
-                    ],
+                        AutoScrollTag(
+                          controller: controller,
+                          index: 3,
+                          key: const ValueKey(3),
+                          child: WorkDesktop(
+                            height: height,
+                            width: width,
+                          ),
+                        ),
+                        AutoScrollTag(
+                          controller: controller,
+                          index: 4,
+                          key: const ValueKey(4),
+                          child: const ContactDesktop(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              DesktopMailContainer(
-                width: width,
-                height: height,
-              ),
-            ],
-          ),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: AppConstant.primaryColor,
-            onPressed: () {
-              ref.read(scrollProvider.notifier).scollToIndex(0, controller);
-            },
-            child: Icon(
-              Icons.keyboard_arrow_up_rounded,
-              size: 24.sp,
+                DesktopMailContainer(
+                  width: width,
+                  height: height,
+                ),
+              ],
             ),
           ),
+          floatingActionButton: hideFab.value
+              ? null
+              : FloatingActionButton(
+                  backgroundColor: AppConstant.primaryColor,
+                  onPressed: () {
+                    scollToIndex(0, controller);
+                    // hideFab.value = true;
+                  },
+                  child: Icon(
+                    Icons.keyboard_arrow_up_rounded,
+                    size: 24.sp,
+                  ),
+                ),
         ),
       ],
     );

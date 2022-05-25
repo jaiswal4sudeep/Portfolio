@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/screens/_dashboard/application/scroll_provider.dart';
+import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:portfolio/screens/a_home/screens/home_mobile.dart';
 import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
@@ -12,7 +13,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 import '../widgets/mobile_drawer.dart';
 
-class DashboardMobile extends HookConsumerWidget {
+class DashboardMobile extends HookWidget {
   const DashboardMobile({
     Key? key,
     required this.width,
@@ -21,7 +22,7 @@ class DashboardMobile extends HookConsumerWidget {
   final double width;
   final double height;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     AutoScrollController controller = AutoScrollController(
         // viewportBoundaryGetter: () => Rect.fromLTRB(
         //   0,
@@ -31,6 +32,7 @@ class DashboardMobile extends HookConsumerWidget {
         // ),
         // axis: Axis.vertical,
         );
+    final hideFab = useState<bool>(true);
     return Stack(
       children: [
         SizedBox(
@@ -67,7 +69,7 @@ class DashboardMobile extends HookConsumerWidget {
             backgroundColor: Colors.transparent,
             title: GestureDetector(
               onTap: () {
-                ref.read(scrollProvider.notifier).scollToIndex(0, controller);
+                scollToIndex(0, controller);
               },
               child: Row(
                 children: [
@@ -98,69 +100,83 @@ class DashboardMobile extends HookConsumerWidget {
             width: width,
             controller: controller,
           ),
-          body: Center(
-            child: ScrollConfiguration(
-              behavior: ScrollConfiguration.of(context).copyWith(
-                scrollbars: false,
-              ),
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                controller: controller,
-                children: [
-                  AutoScrollTag(
-                    controller: controller,
-                    index: 0,
-                    key: const ValueKey(0),
-                    child: HomeMobile(
-                      controller: controller,
-                      height: height,
-                      width: width,
-                    ),
-                  ),
-                  AutoScrollTag(
-                    controller: controller,
-                    index: 1,
-                    key: const ValueKey(1),
-                    child: const AboutMobile(),
-                  ),
-                  AutoScrollTag(
-                    controller: controller,
-                    index: 2,
-                    key: const ValueKey(2),
-                    child: ExperienceMobile(
-                      height: height,
-                      width: width,
-                    ),
-                  ),
-                  AutoScrollTag(
-                    controller: controller,
-                    index: 3,
-                    key: const ValueKey(3),
-                    child: WorkMobile(
-                      height: height,
-                      width: width,
-                    ),
-                  ),
-                  AutoScrollTag(
-                    controller: controller,
-                    index: 4,
-                    key: const ValueKey(4),
-                    child: const ContactMobile(),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: AppConstant.primaryColor,
-            onPressed: () {
-              ref.read(scrollProvider.notifier).scollToIndex(0, controller);
+          body: NotificationListener<UserScrollNotification>(
+            onNotification: (notification) {
+              final ScrollDirection direction = notification.direction;
+              if (direction == ScrollDirection.reverse) {
+                hideFab.value = false;
+              } else if (direction == ScrollDirection.forward) {
+                hideFab.value = true;
+              }
+              return true;
             },
-            child: Icon(
-              Icons.keyboard_arrow_up_rounded,
-              size: 24.sp,
+            child: Center(
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(
+                  scrollbars: false,
+                ),
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  controller: controller,
+                  children: [
+                    AutoScrollTag(
+                      controller: controller,
+                      index: 0,
+                      key: const ValueKey(0),
+                      child: HomeMobile(
+                        controller: controller,
+                        height: height,
+                        width: width,
+                      ),
+                    ),
+                    AutoScrollTag(
+                      controller: controller,
+                      index: 1,
+                      key: const ValueKey(1),
+                      child: const AboutMobile(),
+                    ),
+                    AutoScrollTag(
+                      controller: controller,
+                      index: 2,
+                      key: const ValueKey(2),
+                      child: ExperienceMobile(
+                        height: height,
+                        width: width,
+                      ),
+                    ),
+                    AutoScrollTag(
+                      controller: controller,
+                      index: 3,
+                      key: const ValueKey(3),
+                      child: WorkMobile(
+                        height: height,
+                        width: width,
+                      ),
+                    ),
+                    AutoScrollTag(
+                      controller: controller,
+                      index: 4,
+                      key: const ValueKey(4),
+                      child: const ContactMobile(),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
+          floatingActionButton: hideFab.value
+              ? null
+              : FloatingActionButton(
+                  backgroundColor: AppConstant.primaryColor,
+                  onPressed: () {
+                    scollToIndex(0, controller);
+                    // hideFab.value = true;
+                  },
+                  child: Icon(
+                    Icons.keyboard_arrow_up_rounded,
+                    size: 24.sp,
+                  ),
+                ),
         ),
       ],
     );

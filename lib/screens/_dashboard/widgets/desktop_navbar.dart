@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/screens/_dashboard/application/scroll_provider.dart';
+import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 
-class DesktopNavbar extends HookConsumerWidget {
+class DesktopNavbar extends StatelessWidget {
   const DesktopNavbar({
     Key? key,
     required this.controller,
@@ -14,12 +13,12 @@ class DesktopNavbar extends HookConsumerWidget {
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Row(
       children: [
         TextButton(
           onPressed: () {
-            ref.read(scrollProvider.notifier).scollToIndex(0, controller);
+            scollToIndex(0, controller);
           },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
@@ -31,7 +30,7 @@ class DesktopNavbar extends HookConsumerWidget {
         ),
         TextButton(
           onPressed: () {
-            ref.read(scrollProvider.notifier).scollToIndex(1, controller);
+            scollToIndex(1, controller);
           },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
@@ -43,7 +42,7 @@ class DesktopNavbar extends HookConsumerWidget {
         ),
         TextButton(
           onPressed: () {
-            ref.read(scrollProvider.notifier).scollToIndex(2, controller);
+            scollToIndex(2, controller);
           },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
@@ -55,7 +54,7 @@ class DesktopNavbar extends HookConsumerWidget {
         ),
         TextButton(
           onPressed: () {
-            ref.read(scrollProvider.notifier).scollToIndex(3, controller);
+            scollToIndex(3, controller);
           },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,
@@ -67,10 +66,7 @@ class DesktopNavbar extends HookConsumerWidget {
         ),
         TextButton(
           onPressed: () {
-            ref.read(scrollProvider.notifier).scollToIndex(
-                  4,
-                  controller,
-                );
+            scollToIndex(4, controller);
           },
           style: TextButton.styleFrom(
             primary: AppConstant.titlecolor,

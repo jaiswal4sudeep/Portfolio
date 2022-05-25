@@ -1,12 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/screens/_dashboard/application/scroll_provider.dart';
+import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 
-class HomeContent extends HookConsumerWidget {
+class HomeContent extends StatelessWidget {
   const HomeContent(
     this.controller, {
     Key? key,
@@ -15,7 +14,7 @@ class HomeContent extends HookConsumerWidget {
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -75,21 +74,26 @@ class HomeContent extends HookConsumerWidget {
         SizedBox(
           height: 20.h,
         ),
-        GestureDetector(
-          onTap: () {
-            ref.read(scrollProvider.notifier).scollToIndex(4, controller);
-          },
-          child: Container(
-            decoration: ShapeDecoration(
-              shape: StadiumBorder(
-                side: BorderSide(
-                  color: AppConstant.titlecolor,
-                  width: 1.sp,
+        SizedBox(
+          child: TextButton(
+            onPressed: () {
+              scollToIndex(4, controller);
+            },
+            style: ButtonStyle(
+              overlayColor: MaterialStateColor.resolveWith(
+                (states) => AppConstant.subtitlecolor.withOpacity(0.2),
+              ),
+              shape: MaterialStateProperty.all(
+                StadiumBorder(
+                  side: BorderSide(
+                    color: AppConstant.titlecolor,
+                    width: 1.sp,
+                  ),
                 ),
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(12.sp),
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                 'Get in Touch',
                 style: Theme.of(context).textTheme.headline4,
