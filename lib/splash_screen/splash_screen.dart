@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-
 import '../core/app_constant.dart';
 import '../screens/_dashboard/dashboard_main.dart';
 

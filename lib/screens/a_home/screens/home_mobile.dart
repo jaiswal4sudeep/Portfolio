@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../widgets/home_content.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({Key? key, required this.width, required this.height})
@@ -8,12 +10,13 @@ class HomeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
-      child: Center(
-        child: Text(
-          'HomeMobile',
-          style: Theme.of(context).textTheme.headline1,
+      height: height,
+      width: width,
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 32.w,
         ),
+        child: const HomeContent(),
       ),
     );
   }

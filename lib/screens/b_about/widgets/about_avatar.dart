@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/app_constant.dart';
 
 class AboutAvatar extends StatelessWidget {

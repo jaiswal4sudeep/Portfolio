@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import 'screens/dashboard_desktop.dart';
 import 'screens/dashboard_mobile.dart';
 

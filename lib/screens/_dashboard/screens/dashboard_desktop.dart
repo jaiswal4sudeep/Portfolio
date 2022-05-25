@@ -198,10 +198,7 @@ class DashboardDesktop extends HookConsumerWidget {
                         controller: controller,
                         index: 4,
                         key: const ValueKey(4),
-                        child: ContactDesktop(
-                          height: height,
-                          width: width,
-                        ),
+                        child: const ContactDesktop(),
                       ),
                     ],
                   ),

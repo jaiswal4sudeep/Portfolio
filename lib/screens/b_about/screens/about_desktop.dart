@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/core/app_constant.dart';
 import 'package:portfolio/screens/b_about/widgets/about_intro.dart';
 import 'package:portfolio/screens/b_about/widgets/skill_meter.dart';
-
 import '../widgets/about_avatar.dart';
 import '../widgets/about_education.dart';
 
