@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:portfolio/screens/a_home/screens/home_mobile.dart';
@@ -172,9 +173,9 @@ class DashboardMobile extends HookWidget {
                     scollToIndex(0, controller);
                     // hideFab.value = true;
                   },
-                  child: Icon(
-                    Icons.keyboard_arrow_up_rounded,
-                    size: 24.sp,
+                  child: FaIcon(
+                    FontAwesomeIcons.anglesUp,
+                    size: 16.sp,
                   ),
                 ),
         ),

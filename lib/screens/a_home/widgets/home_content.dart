@@ -93,10 +93,10 @@ class HomeContent extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Text(
                 'Get in Touch',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headline5,
               ),
             ),
           ),

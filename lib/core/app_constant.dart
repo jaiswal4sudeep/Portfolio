@@ -31,3 +31,4 @@ mixin ProjectsURL {
   static const neumorphicCalculatorURL =
       '${SocialMediaURLs.githubURL}/Neumorphism-Calculator';
 }
+

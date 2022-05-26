@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/splash_screen/splash_screen.dart';
+import 'screens/_dashboard/dashboard_main.dart';
 import 'core/app_theme.dart';
 
 void main() {
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SplashScreen(),
-      // child: const DashboardMain(),
+      // child: const SplashScreen(),
+      child: const DashboardMain(),
     );
   }
 }

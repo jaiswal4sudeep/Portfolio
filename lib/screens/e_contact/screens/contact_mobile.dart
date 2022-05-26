@@ -15,12 +15,17 @@ class ContactMobile extends HookWidget {
     final formkey = GlobalKey<FormState>();
     double width = 300.w;
 
-    return ContactSection(
-      formkey: formkey,
-      width: width,
-      name: name,
-      email: email,
-      message: message,
+    return Column(
+      children: [
+        ContactSection(
+          formkey: formkey,
+          width: width,
+          name: name,
+          email: email,
+          message: message,
+          isMobile: true,
+        ),
+      ],
     );
   }
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/app_constant.dart';
+import '../../_dashboard/application/url_provider.dart';
+import '../../_dashboard/widgets/social_media_widget.dart';
 
-class ContactSection extends StatelessWidget {
+class ContactSection extends HookConsumerWidget {
   const ContactSection({
     Key? key,
     required this.formkey,
@@ -10,6 +14,7 @@ class ContactSection extends StatelessWidget {
     required this.name,
     required this.email,
     required this.message,
+    required this.isMobile,
   }) : super(key: key);
 
   final GlobalKey<FormState> formkey;
@@ -17,9 +22,10 @@ class ContactSection extends StatelessWidget {
   final TextEditingController name;
   final TextEditingController email;
   final TextEditingController message;
+  final bool isMobile;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Form(
       key: formkey,
       child: Center(
@@ -196,7 +202,34 @@ class ContactSection extends StatelessWidget {
                           child: TextButton(
                             onPressed: () {
                               if (formkey.currentState!.validate()) {
-                                print('Message Sent');
+                                final snackBar = SnackBar(
+                                  content: SizedBox(
+                                      child: Row(
+                                    children: [
+                                      const FaIcon(
+                                        FontAwesomeIcons.solidCircleCheck,
+                                      ),
+                                      SizedBox(
+                                        width: 5.sp,
+                                      ),
+                                      const Text(
+                                        'Mail Sent Successfully!',
+                                      ),
+                                    ],
+                                  )),
+                                  behavior: SnackBarBehavior.floating,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      8.0,
+                                    ),
+                                  ),
+                                  backgroundColor: AppConstant.primaryColor,
+                                  duration: const Duration(
+                                    milliseconds: 1500,
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
                               }
                             },
                             style: ButtonStyle(
@@ -235,8 +268,40 @@ class ContactSection extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20.h,
+              height: 15.h,
             ),
+            isMobile
+                ? Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: SizedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SocialMediaWidget(FontAwesomeIcons.github, () {
+                            ref
+                                .read(urlProvider.notifier)
+                                .openURL(SocialMediaURLs.githubURL);
+                          }),
+                          SocialMediaWidget(FontAwesomeIcons.linkedin, () {
+                            ref
+                                .read(urlProvider.notifier)
+                                .openURL(SocialMediaURLs.linkedinURL);
+                          }),
+                          SocialMediaWidget(FontAwesomeIcons.twitter, () {
+                            ref
+                                .read(urlProvider.notifier)
+                                .openURL(SocialMediaURLs.twitterURL);
+                          }),
+                          SocialMediaWidget(FontAwesomeIcons.instagram, () {
+                            ref
+                                .read(urlProvider.notifier)
+                                .openURL(SocialMediaURLs.igURL);
+                          }),
+                        ],
+                      ),
+                    ),
+                  )
+                : const SizedBox(),
             Center(
               child: Text(
                 'Made with \u2665 with Flutter.',

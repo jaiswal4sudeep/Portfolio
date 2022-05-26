@@ -15,7 +15,7 @@ class HomeDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height + 64,
+      height: height - 64,
       width: width,
       child: HomeContent(controller),
     );

@@ -20,6 +20,7 @@ class ContactDesktop extends HookWidget {
       name: name,
       email: email,
       message: message,
+      isMobile: false,
     );
   }
 }
