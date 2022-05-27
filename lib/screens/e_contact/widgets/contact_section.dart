@@ -5,9 +5,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/app_constant.dart';
 import '../../_dashboard/application/url_provider.dart';
 import '../../_dashboard/widgets/social_media_widget.dart';
+import '../application/send_email.dart';
 
 class ContactSection extends HookConsumerWidget {
-  const ContactSection({
+  const ContactSection(
+    this.subject, {
     Key? key,
     required this.formkey,
     required this.width,
@@ -21,6 +23,7 @@ class ContactSection extends HookConsumerWidget {
   final double width;
   final TextEditingController name;
   final TextEditingController email;
+  final TextEditingController subject;
   final TextEditingController message;
   final bool isMobile;
 
@@ -153,6 +156,51 @@ class ContactSection extends HookConsumerWidget {
                           vertical: 12.0,
                         ),
                         child: TextFormField(
+                          controller: subject,
+                          autofocus: false,
+                          cursorColor: AppConstant.primaryColor,
+                          keyboardType: TextInputType.text,
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                            hintText: 'Subject',
+                            hintStyle:
+                                Theme.of(context).textTheme.subtitle1!.copyWith(
+                                      fontSize: 12.sp,
+                                    ),
+                            border: const UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppConstant.preBGColor,
+                                width: 1,
+                              ),
+                            ),
+                            focusedBorder: const UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppConstant.primaryColor,
+                                width: 1,
+                              ),
+                            ),
+                            enabledBorder: const UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppConstant.preBGColor,
+                                width: 1,
+                              ),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Subject cannot be empty";
+                            }
+
+                            return null;
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24.0,
+                          vertical: 12.0,
+                        ),
+                        child: TextFormField(
                           controller: message,
                           autofocus: false,
                           cursorColor: AppConstant.primaryColor,
@@ -202,34 +250,35 @@ class ContactSection extends HookConsumerWidget {
                           child: TextButton(
                             onPressed: () {
                               if (formkey.currentState!.validate()) {
-                                final snackBar = SnackBar(
-                                  content: SizedBox(
-                                      child: Row(
-                                    children: [
-                                      const FaIcon(
-                                        FontAwesomeIcons.solidCircleCheck,
+                                sendEmail(
+                                  name: name.text,
+                                  email: email.text,
+                                  subject: subject.text,
+                                  message: message.text,
+                                )
+                                    .then(
+                                      (value) => ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        UiHelper.showSnackbar(
+                                          context,
+                                          FontAwesomeIcons.solidCircleCheck,
+                                          'Mail Sent Successfully!',
+                                          AppConstant.primaryColor,
+                                        ),
                                       ),
-                                      SizedBox(
-                                        width: 5.sp,
+                                    )
+                                    .onError(
+                                      (error, stackTrace) =>
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                        UiHelper.showSnackbar(
+                                          context,
+                                          FontAwesomeIcons.circleExclamation,
+                                          error.toString(),
+                                          Colors.red,
+                                        ),
                                       ),
-                                      const Text(
-                                        'Mail Sent Successfully!',
-                                      ),
-                                    ],
-                                  )),
-                                  behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      8.0,
-                                    ),
-                                  ),
-                                  backgroundColor: AppConstant.primaryColor,
-                                  duration: const Duration(
-                                    milliseconds: 1500,
-                                  ),
-                                );
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(snackBar);
+                                    );
                               }
                             },
                             style: ButtonStyle(

@@ -1,4 +1,8 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 mixin AppConstant {
   static const Color titlecolor = Color(0xFFFFFFFF);
@@ -32,3 +36,39 @@ mixin ProjectsURL {
       '${SocialMediaURLs.githubURL}/Neumorphism-Calculator';
 }
 
+mixin UiHelper {
+  static showSnackbar(context, IconData icon, String message, Color bgColor) {
+    final snackBar = SnackBar(
+      content: SizedBox(
+        child: Row(
+          children: [
+            FaIcon(
+              icon,
+            ),
+            SizedBox(
+              width: 5.sp,
+            ),
+            Text(
+              message,
+            ),
+          ],
+        ),
+      ),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      backgroundColor: bgColor,
+      duration: const Duration(
+        milliseconds: 1500,
+      ),
+    );
+  }
+}
+
+mixin MailService {
+  static const mailSenderAPIURL = 'https://api.emailjs.com/api/v1.0/email/send';
+  static const serviceId = 'service_c8yi8t6';
+  static const templateId = 'template_5wxw4vi';
+  static const userId = 'XabT7aBZH3rjIyWv0';
+}

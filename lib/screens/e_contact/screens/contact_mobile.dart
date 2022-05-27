@@ -11,6 +11,7 @@ class ContactMobile extends HookWidget {
   Widget build(BuildContext context) {
     final name = useTextEditingController();
     final email = useTextEditingController();
+    final subject = useTextEditingController();
     final message = useTextEditingController();
     final formkey = GlobalKey<FormState>();
     double width = 300.w;
@@ -18,6 +19,7 @@ class ContactMobile extends HookWidget {
     return Column(
       children: [
         ContactSection(
+          subject,
           formkey: formkey,
           width: width,
           name: name,
