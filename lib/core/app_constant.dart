@@ -1,5 +1,3 @@
-// ignore_for_file: unused_local_variable
-
 import 'package:flutter/material.dart';
 
 mixin AppConstant {
@@ -19,6 +17,7 @@ mixin SocialMediaURLs {
   static const igURL = 'https://www.instagram.com/jaiswal4sudeep/';
   static const twitterURL = 'https://twitter.com/Jaiswal4sudeep';
   static const githubURL = 'https://github.com/jaiswal4sudeep';
+  static const techDockLabs = 'https://techdocklabs.com/';
 }
 
 mixin ProjectsURL {

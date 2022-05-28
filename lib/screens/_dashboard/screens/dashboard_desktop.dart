@@ -7,7 +7,7 @@ import 'package:portfolio/core/app_constant.dart';
 import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
 import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
-import 'package:portfolio/screens/d_work/screens/work_desktop.dart';
+import 'package:portfolio/screens/d_projects/screens/projects_desktop.dart';
 import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../application/scroll_to_index.dart';
@@ -167,9 +167,9 @@ class DashboardDesktop extends HookWidget {
                         index: 0,
                         key: const ValueKey(0),
                         child: HomeDesktop(
-                          controller: controller,
                           height: height,
                           width: width,
+                          controller: controller,
                         ),
                       ),
                       AutoScrollTag(
@@ -188,10 +188,7 @@ class DashboardDesktop extends HookWidget {
                         controller: controller,
                         index: 3,
                         key: const ValueKey(3),
-                        child: WorkDesktop(
-                          height: height,
-                          width: width,
-                        ),
+                        child: const ProjectsDesktop(),
                       ),
                       AutoScrollTag(
                         controller: controller,

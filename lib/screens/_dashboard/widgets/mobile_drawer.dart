@@ -56,7 +56,7 @@ class MobileDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Work',
+              'Projects',
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {

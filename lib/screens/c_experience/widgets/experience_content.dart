@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
 import 'package:portfolio/screens/c_experience/widgets/worked_on.dart';
 import '../../../core/app_constant.dart';
 
-class ExperienceContent extends StatelessWidget {
+class ExperienceContent extends HookConsumerWidget {
   const ExperienceContent({
     Key? key,
     required this.width,
@@ -12,7 +14,7 @@ class ExperienceContent extends StatelessWidget {
   final double width;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Center(
       child: Column(
         children: [
@@ -44,7 +46,13 @@ class ExperienceContent extends StatelessWidget {
                     SizedBox(
                       height: 10.h,
                     ),
-                    const WorkedOn(),
+                    WorkedOn(
+                      companyInfo: () {
+                        ref
+                            .read(urlProvider.notifier)
+                            .openURL(SocialMediaURLs.techDockLabs);
+                      },
+                    ),
                     SizedBox(
                       height: 10.h,
                     ),

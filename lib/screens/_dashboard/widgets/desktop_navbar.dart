@@ -61,7 +61,7 @@ class DesktopNavbar extends StatelessWidget {
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text('Work'),
+            child: Text('Projects'),
           ),
         ),
         TextButton(

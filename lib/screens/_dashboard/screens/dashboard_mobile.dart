@@ -7,7 +7,7 @@ import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:portfolio/screens/a_home/screens/home_mobile.dart';
 import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
-import 'package:portfolio/screens/d_work/screens/work_mobile.dart';
+import 'package:portfolio/screens/d_projects/screens/projects_mobile.dart';
 import 'package:portfolio/screens/e_contact/screens/contact_mobile.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
@@ -114,9 +114,9 @@ class DashboardMobile extends HookWidget {
                     index: 0,
                     key: const ValueKey(0),
                     child: HomeMobile(
-                      controller: controller,
                       height: height,
                       width: width,
+                      controller: controller,
                     ),
                   ),
                   AutoScrollTag(
@@ -135,10 +135,7 @@ class DashboardMobile extends HookWidget {
                     controller: controller,
                     index: 3,
                     key: const ValueKey(3),
-                    child: WorkMobile(
-                      height: height,
-                      width: width,
-                    ),
+                    child: const ProjectsMobile(),
                   ),
                   AutoScrollTag(
                     controller: controller,
