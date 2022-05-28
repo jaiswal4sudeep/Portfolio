@@ -84,7 +84,7 @@ class DesktopNavbar extends StatelessWidget {
             ),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(2.0),
                 side: BorderSide(
                   color: AppConstant.primaryColor,
                   width: 1.sp,

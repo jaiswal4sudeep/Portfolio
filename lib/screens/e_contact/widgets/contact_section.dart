@@ -250,35 +250,79 @@ class ContactSection extends HookConsumerWidget {
                           child: TextButton(
                             onPressed: () {
                               if (formkey.currentState!.validate()) {
-                                sendEmail(
-                                  name: name.text,
-                                  email: email.text,
-                                  subject: subject.text,
-                                  message: message.text,
-                                )
-                                    .then(
-                                      (value) => ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        UiHelper.showSnackbar(
-                                          context,
-                                          FontAwesomeIcons.solidCircleCheck,
-                                          'Mail Sent Successfully!',
-                                          AppConstant.primaryColor,
+                                try {
+                                  sendEmail(
+                                    name: name.text,
+                                    email: email.text,
+                                    subject: subject.text,
+                                    message: message.text,
+                                  ).then(
+                                    (value) => {
+                                      name.clear(),
+                                      email.clear(),
+                                      subject.clear(),
+                                      message.clear(),
+                                    },
+                                  );
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: SizedBox(
+                                        child: Row(
+                                          children: [
+                                            const FaIcon(
+                                              FontAwesomeIcons.solidCircleCheck,
+                                            ),
+                                            SizedBox(
+                                              width: 5.sp,
+                                            ),
+                                            const Text(
+                                              'Mail Sent Successfully!',
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    )
-                                    .onError(
-                                      (error, stackTrace) =>
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                        UiHelper.showSnackbar(
-                                          context,
-                                          FontAwesomeIcons.circleExclamation,
-                                          error.toString(),
-                                          Colors.red,
+                                      behavior: SnackBarBehavior.floating,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      backgroundColor: AppConstant.primaryColor,
+                                      duration: const Duration(
+                                        milliseconds: 1500,
+                                      ),
+                                    ),
+                                  );
+                                } catch (e) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: SizedBox(
+                                        child: Row(
+                                          children: [
+                                            const FaIcon(
+                                              FontAwesomeIcons
+                                                  .circleExclamation,
+                                            ),
+                                            SizedBox(
+                                              width: 5.sp,
+                                            ),
+                                            Text(
+                                              e.toString(),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    );
+                                      behavior: SnackBarBehavior.floating,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      backgroundColor: Colors.red,
+                                      duration: const Duration(
+                                        milliseconds: 1500,
+                                      ),
+                                    ),
+                                  );
+                                }
                               }
                             },
                             style: ButtonStyle(

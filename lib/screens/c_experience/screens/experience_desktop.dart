@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import '../widgets/experience_content.dart';
 
-class ExperienceDesktop extends StatelessWidget {
-  const ExperienceDesktop({Key? key, required this.width, required this.height})
-      : super(key: key);
-  final double width;
-  final double height;
+class ExperienceDesktop extends HookWidget {
+  const ExperienceDesktop({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: Center(
-        child: Text(
-          'ExperienceDesktop',
-          style: Theme.of(context).textTheme.headline1,
-        ),
-      ),
+    const double width = 864;
+
+    return const ExperienceContent(
+      width: width,
     );
   }
 }

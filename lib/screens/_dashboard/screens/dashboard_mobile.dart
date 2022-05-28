@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -33,7 +32,7 @@ class DashboardMobile extends HookWidget {
         // ),
         // axis: Axis.vertical,
         );
-    final hideFab = useState<bool>(true);
+
     return Stack(
       children: [
         SizedBox(
@@ -101,83 +100,66 @@ class DashboardMobile extends HookWidget {
             width: width,
             controller: controller,
           ),
-          body: NotificationListener<UserScrollNotification>(
-            onNotification: (notification) {
-              final ScrollDirection direction = notification.direction;
-              if (direction == ScrollDirection.reverse) {
-                hideFab.value = false;
-              } else if (direction == ScrollDirection.forward) {
-                hideFab.value = true;
-              }
-              return true;
-            },
-            child: Center(
-              child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(context).copyWith(
-                  scrollbars: false,
-                ),
-                child: ListView(
-                  physics: const BouncingScrollPhysics(),
-                  controller: controller,
-                  children: [
-                    AutoScrollTag(
+          body: Center(
+            child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(
+                scrollbars: false,
+              ),
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
+                controller: controller,
+                children: [
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 0,
+                    key: const ValueKey(0),
+                    child: HomeMobile(
                       controller: controller,
-                      index: 0,
-                      key: const ValueKey(0),
-                      child: HomeMobile(
-                        controller: controller,
-                        height: height,
-                        width: width,
-                      ),
+                      height: height,
+                      width: width,
                     ),
-                    AutoScrollTag(
-                      controller: controller,
-                      index: 1,
-                      key: const ValueKey(1),
-                      child: const AboutMobile(),
+                  ),
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 1,
+                    key: const ValueKey(1),
+                    child: const AboutMobile(),
+                  ),
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 2,
+                    key: const ValueKey(2),
+                    child: const ExperienceMobile(),
+                  ),
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 3,
+                    key: const ValueKey(3),
+                    child: WorkMobile(
+                      height: height,
+                      width: width,
                     ),
-                    AutoScrollTag(
-                      controller: controller,
-                      index: 2,
-                      key: const ValueKey(2),
-                      child: ExperienceMobile(
-                        height: height,
-                        width: width,
-                      ),
-                    ),
-                    AutoScrollTag(
-                      controller: controller,
-                      index: 3,
-                      key: const ValueKey(3),
-                      child: WorkMobile(
-                        height: height,
-                        width: width,
-                      ),
-                    ),
-                    AutoScrollTag(
-                      controller: controller,
-                      index: 4,
-                      key: const ValueKey(4),
-                      child: const ContactMobile(),
-                    ),
-                  ],
-                ),
+                  ),
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 4,
+                    key: const ValueKey(4),
+                    child: const ContactMobile(),
+                  ),
+                ],
               ),
             ),
           ),
-          floatingActionButton: hideFab.value
-              ? null
-              : FloatingActionButton(
-                  backgroundColor: AppConstant.primaryColor,
-                  onPressed: () {
-                    scollToIndex(0, controller);
-                    // hideFab.value = true;
-                  },
-                  child: FaIcon(
-                    FontAwesomeIcons.anglesUp,
-                    size: 16.sp,
-                  ),
-                ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: AppConstant.primaryColor,
+            onPressed: () {
+              scollToIndex(0, controller);
+            },
+            child: FaIcon(
+              FontAwesomeIcons.anglesUp,
+              size: 16.sp,
+            ),
+          ),
         ),
       ],
     );

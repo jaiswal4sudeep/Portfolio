@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../widgets/experience_content.dart';
 
 class ExperienceMobile extends StatelessWidget {
-  const ExperienceMobile({Key? key, required this.width, required this.height})
-      : super(key: key);
-  final double width;
-  final double height;
+  const ExperienceMobile({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: Center(
-        child: Text(
-          'ExperienceMobile',
-          style: Theme.of(context).textTheme.headline1,
-        ),
-      ),
+    double width = 300.w;
+
+    return ExperienceContent(
+      width: width,
     );
   }
 }

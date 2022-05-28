@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -38,7 +37,6 @@ class DashboardDesktop extends HookWidget {
         // ),
         // axis: Axis.vertical,
         );
-    final hideFab = useState<bool>(true);
 
     return Stack(
       children: [
@@ -147,97 +145,80 @@ class DashboardDesktop extends HookWidget {
               ),
             ],
           ),
-          body: NotificationListener<UserScrollNotification>(
-            onNotification: (notification) {
-              final ScrollDirection direction = notification.direction;
-              if (direction == ScrollDirection.reverse) {
-                hideFab.value = false;
-              } else if (direction == ScrollDirection.forward) {
-                hideFab.value = true;
-              }
-              return true;
-            },
-            child: Row(
-              children: [
-                DesktopSocialMediaContainer(
-                  width: width,
-                  height: height,
-                ),
-                SizedBox(
-                  width: width * 0.850,
-                  height: height,
-                  child: ScrollConfiguration(
-                    behavior: ScrollConfiguration.of(context).copyWith(
-                      scrollbars: false,
-                    ),
-                    child: ListView(
-                      controller: controller,
-                      physics: const BouncingScrollPhysics(),
-                      children: [
-                        AutoScrollTag(
+          body: Row(
+            children: [
+              DesktopSocialMediaContainer(
+                width: width,
+                height: height,
+              ),
+              SizedBox(
+                width: width * 0.850,
+                height: height,
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(
+                    scrollbars: false,
+                  ),
+                  child: ListView(
+                    controller: controller,
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 0,
+                        key: const ValueKey(0),
+                        child: HomeDesktop(
                           controller: controller,
-                          index: 0,
-                          key: const ValueKey(0),
-                          child: HomeDesktop(
-                            controller: controller,
-                            height: height,
-                            width: width,
-                          ),
+                          height: height,
+                          width: width,
                         ),
-                        AutoScrollTag(
-                          controller: controller,
-                          index: 1,
-                          key: const ValueKey(1),
-                          child: const AboutDesktop(),
+                      ),
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 1,
+                        key: const ValueKey(1),
+                        child: const AboutDesktop(),
+                      ),
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 2,
+                        key: const ValueKey(2),
+                        child: const ExperienceDesktop(),
+                      ),
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 3,
+                        key: const ValueKey(3),
+                        child: WorkDesktop(
+                          height: height,
+                          width: width,
                         ),
-                        AutoScrollTag(
-                          controller: controller,
-                          index: 2,
-                          key: const ValueKey(2),
-                          child: ExperienceDesktop(
-                            height: height,
-                            width: width,
-                          ),
-                        ),
-                        AutoScrollTag(
-                          controller: controller,
-                          index: 3,
-                          key: const ValueKey(3),
-                          child: WorkDesktop(
-                            height: height,
-                            width: width,
-                          ),
-                        ),
-                        AutoScrollTag(
-                          controller: controller,
-                          index: 4,
-                          key: const ValueKey(4),
-                          child: const ContactDesktop(),
-                        ),
-                      ],
-                    ),
+                      ),
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 4,
+                        key: const ValueKey(4),
+                        child: const ContactDesktop(),
+                      ),
+                    ],
                   ),
                 ),
-                DesktopMailContainer(
-                  width: width,
-                  height: height,
-                ),
-              ],
+              ),
+              DesktopMailContainer(
+                width: width,
+                height: height,
+              ),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: AppConstant.primaryColor,
+            onPressed: () {
+              scollToIndex(0, controller);
+            },
+            child: FaIcon(
+              FontAwesomeIcons.anglesUp,
+              size: 16.sp,
             ),
           ),
-          floatingActionButton: hideFab.value
-              ? null
-              : FloatingActionButton(
-                  backgroundColor: AppConstant.primaryColor,
-                  onPressed: () {
-                    scollToIndex(0, controller);
-                    // hideFab.value = true;
-                  },
-                  child: FaIcon(
-                    FontAwesomeIcons.anglesUp,
-                    size: 16.sp,
-                  ),
-                ),
         ),
       ],
     );

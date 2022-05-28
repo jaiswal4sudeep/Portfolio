@@ -6,21 +6,15 @@ import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ExperinceMain extends StatelessWidget {
-  const ExperinceMain({Key? key, required this.height, required this.width})
-      : super(key: key);
-  final double height;
-  final double width;
+  const ExperinceMain({
+    Key? key,
+  }) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: ExperienceMobile(
-        height: height,
-        width: width,
-      ),
-      desktop: ExperienceDesktop(
-        height: height,
-        width: width,
-      ),
+      mobile: const ExperienceMobile(),
+      desktop: const ExperienceDesktop(),
     );
   }
 }

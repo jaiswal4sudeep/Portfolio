@@ -1,8 +1,6 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 mixin AppConstant {
   static const Color titlecolor = Color(0xFFFFFFFF);
@@ -34,36 +32,6 @@ mixin ProjectsURL {
       '${SocialMediaURLs.githubURL}/FlutterBulbAnimation';
   static const neumorphicCalculatorURL =
       '${SocialMediaURLs.githubURL}/Neumorphism-Calculator';
-}
-
-mixin UiHelper {
-  static showSnackbar(context, IconData icon, String message, Color bgColor) {
-    final snackBar = SnackBar(
-      content: SizedBox(
-        child: Row(
-          children: [
-            FaIcon(
-              icon,
-            ),
-            SizedBox(
-              width: 5.sp,
-            ),
-            Text(
-              message,
-            ),
-          ],
-        ),
-      ),
-      behavior: SnackBarBehavior.floating,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      backgroundColor: bgColor,
-      duration: const Duration(
-        milliseconds: 1500,
-      ),
-    );
-  }
 }
 
 mixin MailService {
