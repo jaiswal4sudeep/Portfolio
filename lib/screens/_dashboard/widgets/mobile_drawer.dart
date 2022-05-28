@@ -76,13 +76,34 @@ class MobileDrawer extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
+            child: TextButton(
               onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                primary: AppConstant.primaryColor,
-                textStyle: Theme.of(context).textTheme.headline4,
+              style: ButtonStyle(
+                overlayColor: MaterialStateColor.resolveWith(
+                  (states) => AppConstant.primaryColor.withOpacity(0.2),
+                ),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(2.0),
+                    side: BorderSide(
+                      color: AppConstant.primaryColor,
+                      width: 1.sp,
+                    ),
+                  ),
+                ),
               ),
-              child: const Text('Resume'),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Resume',
+                  style: TextStyle(
+                    color: AppConstant.primaryColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
             ),
           ),
         ],

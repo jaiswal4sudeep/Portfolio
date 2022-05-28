@@ -52,7 +52,7 @@ class ContactSection extends HookConsumerWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Contact Form',
+                          'Contact',
                           style: Theme.of(context).textTheme.headline4,
                         ),
                       ),

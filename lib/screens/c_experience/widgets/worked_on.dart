@@ -19,7 +19,7 @@ class WorkedOn extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(
-              width: 70,
+              width: 60,
               height: 110,
               child: Stack(
                 children: [
@@ -33,7 +33,7 @@ class WorkedOn extends StatelessWidget {
                   Center(
                     child: CircleAvatar(
                       backgroundColor: AppConstant.primaryColor,
-                      radius: 17.r,
+                      radius: 30,
                       child: FaIcon(
                         FontAwesomeIcons.code,
                         color: AppConstant.titlecolor,
@@ -44,9 +44,9 @@ class WorkedOn extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              width: 5.w,
-            ),
+            // SizedBox(
+            //   width: 5.w,
+            // ),
             SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
