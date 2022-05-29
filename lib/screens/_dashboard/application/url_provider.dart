@@ -5,8 +5,12 @@ class UrlNotifier extends StateNotifier<String> {
   UrlNotifier() : super('');
 
   void openURL(String url) async {
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url));
+    try {
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url));
+      }
+    } catch (e) {
+      throw UnimplementedError();
     }
   }
 }
