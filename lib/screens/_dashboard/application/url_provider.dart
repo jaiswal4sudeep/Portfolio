@@ -18,3 +18,4 @@ class UrlNotifier extends StateNotifier<String> {
 final urlProvider = StateNotifierProvider<UrlNotifier, String>((_) {
   return UrlNotifier();
 });
+

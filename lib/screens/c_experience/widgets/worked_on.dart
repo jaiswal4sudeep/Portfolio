@@ -33,11 +33,11 @@ class WorkedOn extends StatelessWidget {
                   Center(
                     child: CircleAvatar(
                       backgroundColor: AppConstant.primaryColor,
-                      radius: 30,
+                      radius: 25,
                       child: FaIcon(
                         FontAwesomeIcons.code,
                         color: AppConstant.titlecolor,
-                        size: 12.sp,
+                        size: 16.sp,
                       ),
                     ),
                   ),

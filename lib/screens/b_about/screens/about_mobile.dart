@@ -13,7 +13,8 @@ class AboutMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
       child: Center(
         child: Container(
           width: 300.w,
@@ -24,118 +25,121 @@ class AboutMobile extends StatelessWidget {
               width: 1.sp,
             ),
           ),
-          child: SizedBox(
-            width: 280.w,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Center(
-                  child: AboutAvatar(),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: AboutIntro(),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16.0,
-                    top: 12.0,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 280.w,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Center(
+                    child: AboutAvatar(),
                   ),
-                  child: Text(
-                    'Education',
-                    style: Theme.of(context).textTheme.headline4,
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: AboutIntro(),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: AboutEducation(),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 16.0,
+                      top: 12.0,
+                    ),
+                    child: Text(
+                      'Education',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   ),
-                  child: Text(
-                    'Skills',
-                    style: Theme.of(context).textTheme.headline4,
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: AboutEducation(),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'Skills',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
                   ),
-                  child: Text(
-                    'App Development',
-                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                          fontSize: 10.sp,
-                        ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'App Development',
+                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                            fontSize: 10.sp,
+                          ),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SkillMeter(
-                    meterValue: 180.w,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SkillMeter(
+                      meterValue: 180.w,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'Web Development',
+                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                            fontSize: 10.sp,
+                          ),
+                    ),
                   ),
-                  child: Text(
-                    'Web Development',
-                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                          fontSize: 10.sp,
-                        ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SkillMeter(
+                      meterValue: 200.w,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SkillMeter(
-                    meterValue: 200.w,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'UI/UX Design',
+                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                            fontSize: 10.sp,
+                          ),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 8.0,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SkillMeter(
+                      meterValue: 225.w,
+                    ),
                   ),
-                  child: Text(
-                    'UI/UX Design',
-                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                          fontSize: 10.sp,
-                        ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'Database',
+                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                            fontSize: 10.sp,
+                          ),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SkillMeter(
-                    meterValue: 225.w,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SkillMeter(
+                      meterValue: 160.w,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
+                  SizedBox(
+                    height: 20.h,
                   ),
-                  child: Text(
-                    'Database',
-                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                          fontSize: 10.sp,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SkillMeter(
-                    meterValue: 160.w,
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
