@@ -37,7 +37,7 @@ class WorkedOn extends StatelessWidget {
                       child: FaIcon(
                         FontAwesomeIcons.code,
                         color: AppConstant.titlecolor,
-                        size: 16.sp,
+                        size: 12.sp,
                       ),
                     ),
                   ),

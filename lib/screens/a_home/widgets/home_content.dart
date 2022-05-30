@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
@@ -38,8 +39,8 @@ class HomeContent extends StatelessWidget {
           child: Row(
             children: [
               Icon(
-                Icons.arrow_right_rounded,
-                size: 24.sp,
+                FontAwesomeIcons.caretRight,
+                size: 16.sp,
                 color: AppConstant.primaryColor,
               ),
               AnimatedTextKit(

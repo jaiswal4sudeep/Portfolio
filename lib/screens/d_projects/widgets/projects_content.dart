@@ -1,9 +1,7 @@
+import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
-import 'package:portfolio/screens/d_projects/widgets/projects.dart';
-import 'package:swipe_deck/swipe_deck.dart';
 import '../../../core/app_constant.dart';
 
 class ProjectsContent extends HookConsumerWidget {
@@ -16,6 +14,7 @@ class ProjectsContent extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    AppinioSwiperController controller = AppinioSwiperController();
     return Center(
       child: Column(
         children: [
@@ -44,77 +43,38 @@ class ProjectsContent extends HookConsumerWidget {
                         style: Theme.of(context).textTheme.headline4,
                       ),
                     ),
-                    SizedBox(
-                      height: 50.h,
-                    ),
                     Center(
                       child: SizedBox(
-                        width: 300.sp,
-                        // height: 200.h,
-                        child: SwipeDeck(
-                          // aspectRatio: 16 / 9,
-                          widgets: [
-                            Projects(
-                              imageAddress: 'assets/images/project_bg.jpg',
-                              projectTitle: 'Drawing App',
-                              projectSubtitle: 'ProjectSubtitle',
-                              projectInfo: () {
-                                ref
-                                    .read(urlProvider.notifier)
-                                    .openURL(ProjectsURL.drawingApp);
-                              },
+                        width: 300,
+                        height: 300,
+                        child: AppinioSwiper(
+                          cards: [
+                            Container(
+                              alignment: Alignment.center,
+                              color: Colors.blue,
+                              child: const Text('1'),
                             ),
-                            Projects(
-                              imageAddress: 'assets/images/project_bg.jpg',
-                              projectTitle: 'Login/Sign up UI',
-                              projectSubtitle: 'ProjectSubtitle',
-                              projectInfo: () {},
+                            Container(
+                              alignment: Alignment.center,
+                              color: Colors.amberAccent,
+                              child: const Text('2'),
                             ),
-                            Projects(
-                              imageAddress: 'assets/images/project_bg.jpg',
-                              projectTitle: 'SortItOut',
-                              projectSubtitle: 'ProjectSubtitle',
-                              projectInfo: () {
-                                ref
-                                    .read(urlProvider.notifier)
-                                    .openURL(ProjectsURL.sortItOutURL);
-                              },
-                            ),
-                            Projects(
-                              imageAddress: 'assets/images/project_bg.jpg',
-                              projectTitle: 'Password Validation',
-                              projectSubtitle: 'ProjectSubtitle',
-                              projectInfo: () {
-                                ref
-                                    .read(urlProvider.notifier)
-                                    .openURL(ProjectsURL.passwordValidationURL);
-                              },
-                            ),
-                            Projects(
-                              imageAddress: 'assets/images/project_bg.jpg',
-                              projectTitle: 'Neumorphic Calculator',
-                              projectSubtitle: 'ProjectSubtitle',
-                              projectInfo: () {
-                                ref.read(urlProvider.notifier).openURL(
-                                    ProjectsURL.neumorphicCalculatorURL);
-                              },
-                            ),
-                            Projects(
-                              imageAddress: 'assets/images/project_bg.jpg',
-                              projectTitle: 'Bulb Animation',
-                              projectSubtitle: 'ProjectSubtitle',
-                              projectInfo: () {
-                                ref
-                                    .read(urlProvider.notifier)
-                                    .openURL(ProjectsURL.bulbAnimationURL);
-                              },
+                            Container(
+                              alignment: Alignment.center,
+                              color: Colors.redAccent,
+                              child: const Text('3'),
                             ),
                           ],
+                          controller: controller,
+                          
+                          onEnd: () {
+                            controller.unswipe();
+                          },
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 50.h,
+                      height: 10.h,
                     ),
                   ],
                 ),
