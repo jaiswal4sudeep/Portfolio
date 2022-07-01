@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         );
       },
       // child: const SplashScreen(),
+      // TODO 
       child: const DashboardMain(),
     );
   }

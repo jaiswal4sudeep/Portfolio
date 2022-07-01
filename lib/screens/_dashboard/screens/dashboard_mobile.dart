@@ -111,12 +111,6 @@ class DashboardMobile extends HookWidget {
                 children: [
                   AutoScrollTag(
                     controller: controller,
-                    index: 3,
-                    key: const ValueKey(3),
-                    child: const ProjectsMobile(),
-                  ),
-                  AutoScrollTag(
-                    controller: controller,
                     index: 0,
                     key: const ValueKey(0),
                     child: HomeMobile(
@@ -136,6 +130,12 @@ class DashboardMobile extends HookWidget {
                     index: 2,
                     key: const ValueKey(2),
                     child: const ExperienceMobile(),
+                  ),
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 3,
+                    key: const ValueKey(3),
+                    child: const ProjectsMobile(),
                   ),
                   AutoScrollTag(
                     controller: controller,

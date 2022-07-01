@@ -21,16 +21,11 @@ mixin SocialMediaURLs {
 }
 
 mixin ProjectsURL {
-  static const drawingApp = '${SocialMediaURLs.githubURL}/DrawingApp';
-  static const loginSignupUIURL = '${SocialMediaURLs.githubURL}/LoginSignupUI';
   static const sortItOutURL =
       '${SocialMediaURLs.githubURL}/SortItOut-Sorting_Visualizer';
-  static const passwordValidationURL =
-      '${SocialMediaURLs.githubURL}/PasswordValidation';
-  static const bulbAnimationURL =
-      '${SocialMediaURLs.githubURL}/FlutterBulbAnimation';
-  static const neumorphicCalculatorURL =
-      '${SocialMediaURLs.githubURL}/Neumorphism-Calculator';
+  static const drawingAppURL = '${SocialMediaURLs.githubURL}/DrawingApp';
+  static const musicPlayerURL = '${SocialMediaURLs.githubURL}/MusicPlayer';
+  static const spaceWarURL = '${SocialMediaURLs.githubURL}/SpaceWar';
 }
 
 mixin MailService {

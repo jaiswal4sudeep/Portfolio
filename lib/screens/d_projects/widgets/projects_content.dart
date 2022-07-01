@@ -1,8 +1,10 @@
-import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
+import 'package:portfolio/screens/d_projects/widgets/project_card.dart';
 import '../../../core/app_constant.dart';
+import 'custom_divider.dart';
 
 class ProjectsContent extends HookConsumerWidget {
   const ProjectsContent({
@@ -14,7 +16,6 @@ class ProjectsContent extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    AppinioSwiperController controller = AppinioSwiperController();
     return Center(
       child: Column(
         children: [
@@ -43,35 +44,71 @@ class ProjectsContent extends HookConsumerWidget {
                         style: Theme.of(context).textTheme.headline4,
                       ),
                     ),
-                    Center(
-                      child: SizedBox(
-                        width: 300,
-                        height: 300,
-                        child: AppinioSwiper(
-                          cards: [
-                            Container(
-                              alignment: Alignment.center,
-                              color: Colors.blue,
-                              child: const Text('1'),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              color: Colors.amberAccent,
-                              child: const Text('2'),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              color: Colors.redAccent,
-                              child: const Text('3'),
-                            ),
-                          ],
-                          controller: controller,
-                          
-                          onEnd: () {
-                            controller.unswipe();
-                          },
-                        ),
-                      ),
+                    ProjectCard(
+                      'FLUTTER',
+                      'SortItOut',
+                      'Sorting Algorithm Visualizer',
+                      '3',
+                      '0',
+                      () {
+                        ref
+                            .read(urlProvider.notifier)
+                            .openURL(ProjectsURL.sortItOutURL);
+                      },
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    CustomDivider(
+                      width: width,
+                    ),
+                    ProjectCard(
+                      'FLUTTER',
+                      'Drawing App',
+                      'Simple Drawing App using Flutter CustomPaint Widget',
+                      '1',
+                      '2',
+                      () {
+                        ref
+                            .read(urlProvider.notifier)
+                            .openURL(ProjectsURL.drawingAppURL);
+                      },
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    CustomDivider(
+                      width: width,
+                    ),
+                    ProjectCard(
+                      'Python',
+                      'SpaceWar',
+                      'A Simple Python Game using PyGame',
+                      '2',
+                      '0',
+                      () {
+                        ref
+                            .read(urlProvider.notifier)
+                            .openURL(ProjectsURL.spaceWarURL);
+                      },
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    CustomDivider(
+                      width: width,
+                    ),
+                    ProjectCard(
+                      'Web',
+                      'Music Player',
+                      'Online Music Player with Limited Songs',
+                      '2',
+                      '0',
+                      () {
+                        ref
+                            .read(urlProvider.notifier)
+                            .openURL(ProjectsURL.musicPlayerURL);
+                      },
                     ),
                     SizedBox(
                       height: 10.h,

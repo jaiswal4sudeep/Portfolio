@@ -29,15 +29,12 @@ class AboutAvatar extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: 100,
-            height: 120,
-            decoration: BoxDecoration(
-              color: AppConstant.titlecolor,
-              border: Border.all(
-                color: AppConstant.titlecolor,
-                width: 1,
-              ),
+          SizedBox(
+            child: Image.asset(
+              'assets/images/ProfilePic.png',
+              height: 120,
+              width: 100,
+              // TODO
             ),
           ),
         ],

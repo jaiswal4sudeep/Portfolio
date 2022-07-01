@@ -63,9 +63,6 @@ dependencies:
 
   # Http Requests
   http: ^0.13.4
-  appinio_swiper: ^1.0.3
-
-  # Card Swipe Animation
   
 
 dev_dependencies:

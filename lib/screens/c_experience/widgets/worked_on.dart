@@ -92,7 +92,7 @@ class WorkedOn extends StatelessWidget {
                       vertical: 2.0,
                     ),
                     child: Text(
-                      'Loram Epsum Loram Epsum Loram Epsum',
+                      'Working as a Flutter Intern to inhance my skills',
                       style: Theme.of(context).textTheme.headline6!.copyWith(
                             color: AppConstant.subtitlecolor,
                             fontSize: 9.sp,
