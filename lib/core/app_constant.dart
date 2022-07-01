@@ -18,6 +18,8 @@ mixin SocialMediaURLs {
   static const twitterURL = 'https://twitter.com/Jaiswal4sudeep';
   static const githubURL = 'https://github.com/jaiswal4sudeep';
   static const techDockLabs = 'https://techdocklabs.com/';
+  static const resumeURL =
+      'https://drive.google.com/file/d/1fVFOaz1x6Az3KKZlmItTT-GgEryjkv9c/view?usp=sharing';
 }
 
 mixin ProjectsURL {

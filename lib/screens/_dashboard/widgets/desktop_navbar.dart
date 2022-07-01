@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
+import '../application/url_provider.dart';
 
-class DesktopNavbar extends StatelessWidget {
+class DesktopNavbar extends HookConsumerWidget {
   const DesktopNavbar({
     Key? key,
     required this.controller,
@@ -13,7 +15,7 @@ class DesktopNavbar extends StatelessWidget {
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
         TextButton(
@@ -77,7 +79,9 @@ class DesktopNavbar extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            ref.read(urlProvider.notifier).openURL(SocialMediaURLs.resumeURL);
+          },
           style: ButtonStyle(
             overlayColor: MaterialStateColor.resolveWith(
               (states) => AppConstant.primaryColor.withOpacity(0.2),

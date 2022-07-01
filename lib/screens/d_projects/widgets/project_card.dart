@@ -23,92 +23,92 @@ class ProjectCard extends HookConsumerWidget {
   final Function() projectLinkOpener;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(
-            top: 8.sp,
-            left: 16.sp,
+    return GestureDetector(
+      onTap: projectLinkOpener,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              top: 8.sp,
+              left: 16.sp,
+            ),
+            child: Text(
+              projectCategory,
+              style: Theme.of(context).textTheme.headline6!.copyWith(
+                    color: AppConstant.primaryColor,
+                  ),
+            ),
           ),
-          child: Text(
-            projectCategory,
-            style: Theme.of(context).textTheme.headline6!.copyWith(
-                  color: AppConstant.primaryColor,
+          Padding(
+            padding: EdgeInsets.only(
+              top: 2.sp,
+              left: 16.sp,
+            ),
+            child: Text(
+              projectName,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 2.sp,
+              left: 16.sp,
+            ),
+            child: Text(
+              projectDescription,
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                    color: AppConstant.subtitlecolor,
+                    fontSize: 9.sp,
+                  ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 6.sp,
+              left: 20.sp,
+              right: 20.sp,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      FontAwesomeIcons.solidStar,
+                      size: 8.sp,
+                    ),
+                    SizedBox(
+                      width: 2.w,
+                    ),
+                    Text(
+                      projectStars,
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    Icon(
+                      FontAwesomeIcons.codeFork,
+                      size: 8.sp,
+                    ),
+                    SizedBox(
+                      width: 2.w,
+                    ),
+                    Text(
+                      projectForks,
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
+                  ],
                 ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: 2.sp,
-            left: 16.sp,
-          ),
-          child: Text(
-            projectName,
-            style: Theme.of(context).textTheme.headline4,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: 2.sp,
-            left: 16.sp,
-          ),
-          child: Text(
-            projectDescription,
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: AppConstant.subtitlecolor,
-                  fontSize: 9.sp,
-                ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: 6.sp,
-            left: 20.sp,
-            right: 20.sp,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.solidStar,
-                    size: 8.sp,
-                  ),
-                  SizedBox(
-                    width: 2.w,
-                  ),
-                  Text(
-                    projectStars,
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                  SizedBox(
-                    width: 8.w,
-                  ),
-                  Icon(
-                    FontAwesomeIcons.codeFork,
-                    size: 8.sp,
-                  ),
-                  SizedBox(
-                    width: 2.w,
-                  ),
-                  Text(
-                    projectForks,
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                ],
-              ),
-              GestureDetector(
-                onTap: projectLinkOpener,
-                child: const Icon(
+                const Icon(
                   FontAwesomeIcons.github,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

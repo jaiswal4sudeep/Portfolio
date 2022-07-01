@@ -14,12 +14,12 @@ class AboutAvatar extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(
-              top: 12,
-              left: 12,
+              top: 16,
+              left: 16,
             ),
             child: Container(
-              width: 100,
-              height: 120,
+              width: 136,
+              height: 136,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 border: Border.all(
@@ -31,10 +31,9 @@ class AboutAvatar extends StatelessWidget {
           ),
           SizedBox(
             child: Image.asset(
-              'assets/images/ProfilePic.png',
-              height: 120,
-              width: 100,
-              // TODO
+              'assets/images/avatar.png',
+              height: 136,
+              fit: BoxFit.fitWidth,
             ),
           ),
         ],
