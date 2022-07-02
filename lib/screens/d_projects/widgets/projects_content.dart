@@ -41,7 +41,7 @@ class ProjectsContent extends HookConsumerWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'Projects',
-                        style: Theme.of(context).textTheme.headline4,
+                        style: Theme.of(context).textTheme.headline3,
                       ),
                     ),
                     ProjectCard(

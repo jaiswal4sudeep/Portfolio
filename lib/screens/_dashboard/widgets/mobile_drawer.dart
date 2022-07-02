@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 import '../application/scroll_to_index.dart';
@@ -75,42 +74,6 @@ class MobileDrawer extends HookConsumerWidget {
               scollToIndex(4, controller);
               Navigator.of(context).pop();
             },
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              onPressed: () {
-                ref
-                    .read(urlProvider.notifier)
-                    .openURL(SocialMediaURLs.resumeURL);
-              },
-              style: ButtonStyle(
-                overlayColor: MaterialStateColor.resolveWith(
-                  (states) => AppConstant.primaryColor.withOpacity(0.2),
-                ),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2.0),
-                    side: BorderSide(
-                      color: AppConstant.primaryColor,
-                      width: 1.sp,
-                    ),
-                  ),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Resume',
-                  style: TextStyle(
-                    color: AppConstant.primaryColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12.sp,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-            ),
           ),
         ],
       ),

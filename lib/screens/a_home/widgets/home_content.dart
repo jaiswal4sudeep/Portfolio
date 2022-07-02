@@ -2,11 +2,12 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/screens/_dashboard/application/url_provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 
-class HomeContent extends StatelessWidget {
+class HomeContent extends HookConsumerWidget {
   const HomeContent(
     this.controller, {
     Key? key,
@@ -15,7 +16,7 @@ class HomeContent extends StatelessWidget {
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +79,7 @@ class HomeContent extends StatelessWidget {
         SizedBox(
           child: TextButton(
             onPressed: () {
-              scollToIndex(4, controller);
+              ref.read(urlProvider.notifier).openURL(SocialMediaURLs.resumeURL);
             },
             style: ButtonStyle(
               overlayColor: MaterialStateColor.resolveWith(
@@ -96,7 +97,7 @@ class HomeContent extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Text(
-                'Get in Touch',
+                'Resume',
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),

@@ -50,15 +50,15 @@ class AppTheme {
       ),
       headline6: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
-        fontSize: 8.sp,
+        fontSize: 9.sp,
       ),
       subtitle1: GoogleFonts.montserrat(
         color: AppConstant.subtitlecolor,
-        fontSize: 14.sp,
+        fontSize: 12.sp,
       ),
       subtitle2: GoogleFonts.montserrat(
         color: AppConstant.subtitlecolor,
-        fontSize: 8.sp,
+        fontSize: 9.sp,
       ),
     ),
   );

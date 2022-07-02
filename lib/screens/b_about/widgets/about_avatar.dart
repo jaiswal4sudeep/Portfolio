@@ -14,8 +14,8 @@ class AboutAvatar extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(
-              top: 16,
-              left: 16,
+              top: 12,
+              left: 12,
             ),
             child: Container(
               width: 136,
@@ -31,7 +31,7 @@ class AboutAvatar extends StatelessWidget {
           ),
           SizedBox(
             child: Image.asset(
-              'assets/images/avatar.png',
+              'assets/images/avatarimg.png',
               height: 136,
               fit: BoxFit.fitWidth,
             ),

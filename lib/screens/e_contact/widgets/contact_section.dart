@@ -53,7 +53,7 @@ class ContactSection extends HookConsumerWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Contact',
-                          style: Theme.of(context).textTheme.headline4,
+                          style: Theme.of(context).textTheme.headline3,
                         ),
                       ),
                       Padding(
@@ -69,10 +69,7 @@ class ContactSection extends HookConsumerWidget {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             hintText: 'Name',
-                            hintStyle:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
-                                      fontSize: 12.sp,
-                                    ),
+                            hintStyle: Theme.of(context).textTheme.subtitle1,
                             border: const UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: AppConstant.preBGColor,
@@ -114,10 +111,7 @@ class ContactSection extends HookConsumerWidget {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             hintText: 'Email',
-                            hintStyle:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
-                                      fontSize: 12.sp,
-                                    ),
+                            hintStyle: Theme.of(context).textTheme.subtitle1,
                             border: const UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: AppConstant.preBGColor,
@@ -163,10 +157,7 @@ class ContactSection extends HookConsumerWidget {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             hintText: 'Subject',
-                            hintStyle:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
-                                      fontSize: 12.sp,
-                                    ),
+                            hintStyle: Theme.of(context).textTheme.subtitle1,
                             border: const UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: AppConstant.preBGColor,
@@ -210,10 +201,7 @@ class ContactSection extends HookConsumerWidget {
                           maxLines: null,
                           decoration: InputDecoration(
                             hintText: 'Message',
-                            hintStyle:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
-                                      fontSize: 12.sp,
-                                    ),
+                            hintStyle: Theme.of(context).textTheme.subtitle1,
                             border: const UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: AppConstant.preBGColor,

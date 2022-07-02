@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/screens/b_about/widgets/skill_meter.dart';
+import 'package:portfolio/screens/d_projects/widgets/custom_divider.dart';
 import '../../../core/app_constant.dart';
 import '../widgets/about_avatar.dart';
 import '../widgets/about_education.dart';
@@ -39,6 +39,10 @@ class AboutMobile extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: AboutIntro(),
                   ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: CustomDivider(),
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 16.0,
@@ -46,12 +50,16 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Education',
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                   ),
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: AboutEducation(),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: CustomDivider(),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -60,7 +68,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Skills',
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                   ),
                   Padding(
@@ -69,16 +77,10 @@ class AboutMobile extends StatelessWidget {
                       vertical: 8.0,
                     ),
                     child: Text(
-                      'App Development',
+                      'App Development (Flutter)',
                       style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                           ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SkillMeter(
-                      meterValue: 180.w,
                     ),
                   ),
                   Padding(
@@ -87,34 +89,10 @@ class AboutMobile extends StatelessWidget {
                       vertical: 8.0,
                     ),
                     child: Text(
-                      'Web Development',
+                      'DSA (C/C++, Dart)',
                       style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                           ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SkillMeter(
-                      meterValue: 200.w,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 8.0,
-                    ),
-                    child: Text(
-                      'UI/UX Design',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                            fontSize: 10.sp,
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SkillMeter(
-                      meterValue: 225.w,
                     ),
                   ),
                   Padding(
@@ -123,16 +101,34 @@ class AboutMobile extends StatelessWidget {
                       vertical: 8.0,
                     ),
                     child: Text(
-                      'Database',
+                      'Web Development (HTML, CSS, JS, jQuery, Bootstrap)',
                       style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                            fontSize: 10.sp,
+                            fontSize: 11.sp,
                           ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SkillMeter(
-                      meterValue: 160.w,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'Graphics and UI/UX Design (Photoshop, Illustrator, Figma)',
+                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                            fontSize: 11.sp,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'Database (SQL, MongoDB, Firebase)',
+                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                            fontSize: 11.sp,
+                          ),
                     ),
                   ),
                   SizedBox(

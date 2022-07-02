@@ -4,7 +4,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/screens/_dashboard/application/scroll_to_index.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
-import '../application/url_provider.dart';
 
 class DesktopNavbar extends HookConsumerWidget {
   const DesktopNavbar({
@@ -76,34 +75,6 @@ class DesktopNavbar extends HookConsumerWidget {
           child: const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text('Contact'),
-          ),
-        ),
-        TextButton(
-          onPressed: () {
-            ref.read(urlProvider.notifier).openURL(SocialMediaURLs.resumeURL);
-          },
-          style: ButtonStyle(
-            overlayColor: MaterialStateColor.resolveWith(
-              (states) => AppConstant.primaryColor.withOpacity(0.2),
-            ),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(2.0),
-                side: BorderSide(
-                  color: AppConstant.primaryColor,
-                  width: 1.sp,
-                ),
-              ),
-            ),
-          ),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              'Resume',
-              style: TextStyle(
-                color: AppConstant.titlecolor,
-              ),
-            ),
           ),
         ),
         SizedBox(

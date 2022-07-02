@@ -22,15 +22,15 @@ class AboutEducation extends StatelessWidget {
             children: [
               Text(
                 'Dr. A.P.J. Kalam Technical University, Lucknow',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline6!.copyWith(
+                      fontSize: 11.sp,
+                    ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Text(
                   'Bachlors of Technology\n2019-Present',
-                  style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                        fontSize: 9.sp,
-                      ),
+                  style: Theme.of(context).textTheme.subtitle2,
                 ),
               ),
               SizedBox(
@@ -38,15 +38,15 @@ class AboutEducation extends StatelessWidget {
               ),
               Text(
                 'New Standard Public School, Raebareli',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline6!.copyWith(
+                      fontSize: 11.sp,
+                    ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Text(
                   'Intermediate\n2017-2019',
-                  style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                        fontSize: 9.sp,
-                      ),
+                  style: Theme.of(context).textTheme.subtitle2,
                 ),
               ),
               SizedBox(
@@ -54,15 +54,15 @@ class AboutEducation extends StatelessWidget {
               ),
               Text(
                 'New Standard Public School, Raebareli',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline6!.copyWith(
+                      fontSize: 11.sp,
+                    ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Text(
                   'High School\n2015-2017',
-                  style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                        fontSize: 9.sp,
-                      ),
+                  style: Theme.of(context).textTheme.subtitle2,
                 ),
               ),
             ],

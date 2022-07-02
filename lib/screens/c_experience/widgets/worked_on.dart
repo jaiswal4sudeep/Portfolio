@@ -19,8 +19,8 @@ class WorkedOn extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(
-              width: 60,
-              height: 110,
+              width: 30.w,
+              height: 70.h,
               child: Stack(
                 children: [
                   Center(
@@ -33,7 +33,7 @@ class WorkedOn extends StatelessWidget {
                   Center(
                     child: CircleAvatar(
                       backgroundColor: AppConstant.primaryColor,
-                      radius: 25,
+                      radius: 18.sp,
                       child: FaIcon(
                         FontAwesomeIcons.code,
                         color: AppConstant.titlecolor,
@@ -44,16 +44,13 @@ class WorkedOn extends StatelessWidget {
                 ],
               ),
             ),
-            // SizedBox(
-            //   width: 5.w,
-            // ),
-            SizedBox(
+            Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
+                      horizontal: 12.0,
                       vertical: 2.0,
                     ),
                     child: Text(
@@ -80,9 +77,8 @@ class WorkedOn extends StatelessWidget {
                     ),
                     child: Text(
                       'Flutter Developer - Intern',
-                      style: Theme.of(context).textTheme.headline5!.copyWith(
+                      style: Theme.of(context).textTheme.headline6!.copyWith(
                             color: AppConstant.subtitlecolor,
-                            fontSize: 9.sp,
                           ),
                     ),
                   ),
@@ -92,10 +88,9 @@ class WorkedOn extends StatelessWidget {
                       vertical: 2.0,
                     ),
                     child: Text(
-                      'Working as a Flutter Intern to inhance my skills',
+                      'Working as a Flutter Intern to enhance my skills',
                       style: Theme.of(context).textTheme.headline6!.copyWith(
                             color: AppConstant.subtitlecolor,
-                            fontSize: 9.sp,
                           ),
                     ),
                   ),

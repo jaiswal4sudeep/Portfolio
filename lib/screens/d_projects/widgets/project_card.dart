@@ -57,9 +57,8 @@ class ProjectCard extends HookConsumerWidget {
             ),
             child: Text(
               projectDescription,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headline6!.copyWith(
                     color: AppConstant.subtitlecolor,
-                    fontSize: 9.sp,
                   ),
             ),
           ),
@@ -79,7 +78,7 @@ class ProjectCard extends HookConsumerWidget {
                       size: 8.sp,
                     ),
                     SizedBox(
-                      width: 2.w,
+                      width: 3.w,
                     ),
                     Text(
                       projectStars,

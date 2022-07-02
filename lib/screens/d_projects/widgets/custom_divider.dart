@@ -6,10 +6,10 @@ import '../../../core/app_constant.dart';
 class CustomDivider extends StatelessWidget {
   const CustomDivider({
     Key? key,
-    required this.width,
+    this.width,
   }) : super(key: key);
 
-  final double width;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
