@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
+import 'package:portfolio/screens/f_contact/screens/contact_desktop.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'screens/contact_mobile.dart';

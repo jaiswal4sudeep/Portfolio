@@ -8,7 +8,8 @@ import 'package:portfolio/screens/a_home/screens/home_desktop.dart';
 import 'package:portfolio/screens/b_about/screens/about_desktop.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_desktop.dart';
 import 'package:portfolio/screens/d_projects/screens/projects_desktop.dart';
-import 'package:portfolio/screens/e_contact/screens/contact_desktop.dart';
+import 'package:portfolio/screens/e_achievement/screens/achv_desktop.dart';
+import 'package:portfolio/screens/f_contact/screens/contact_desktop.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../application/scroll_to_index.dart';
 import '../widgets/desktop_mail_container.dart';
@@ -194,6 +195,12 @@ class DashboardDesktop extends HookWidget {
                         controller: controller,
                         index: 4,
                         key: const ValueKey(4),
+                        child: const AchvDesktop(),
+                      ),
+                      AutoScrollTag(
+                        controller: controller,
+                        index: 5,
+                        key: const ValueKey(5),
                         child: const ContactDesktop(),
                       ),
                     ],

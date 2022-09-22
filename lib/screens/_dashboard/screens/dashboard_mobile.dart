@@ -8,7 +8,8 @@ import 'package:portfolio/screens/a_home/screens/home_mobile.dart';
 import 'package:portfolio/screens/b_about/screens/about_mobile.dart';
 import 'package:portfolio/screens/c_experience/screens/experience_mobile.dart';
 import 'package:portfolio/screens/d_projects/screens/projects_mobile.dart';
-import 'package:portfolio/screens/e_contact/screens/contact_mobile.dart';
+import 'package:portfolio/screens/e_achievement/screens/achv_mobile.dart';
+import 'package:portfolio/screens/f_contact/screens/contact_mobile.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../../core/app_constant.dart';
 import '../widgets/mobile_drawer.dart';
@@ -141,6 +142,12 @@ class DashboardMobile extends HookWidget {
                     controller: controller,
                     index: 4,
                     key: const ValueKey(4),
+                    child: const AchvMobile(),
+                  ),
+                  AutoScrollTag(
+                    controller: controller,
+                    index: 5,
+                    key: const ValueKey(5),
                     child: const ContactMobile(),
                   ),
                 ],

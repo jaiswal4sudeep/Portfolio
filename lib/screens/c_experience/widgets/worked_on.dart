@@ -7,8 +7,17 @@ class WorkedOn extends StatelessWidget {
   const WorkedOn({
     Key? key,
     required this.companyInfo,
+    required this.period,
+    required this.comName,
+    required this.post,
+    required this.desc,
   }) : super(key: key);
   final Function companyInfo;
+  final String period;
+  final String comName;
+  final String post;
+  final String desc;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,88 +25,94 @@ class WorkedOn extends StatelessWidget {
         onTap: () {
           companyInfo();
         },
-        child: Row(
-          children: [
-            SizedBox(
-              width: 30.w,
-              height: 70.h,
-              child: Stack(
-                children: [
-                  Center(
-                    child: Container(
-                      width: 3,
-                      height: 110,
-                      color: AppConstant.titlecolor,
-                    ),
-                  ),
-                  Center(
-                    child: CircleAvatar(
-                      backgroundColor: AppConstant.primaryColor,
-                      radius: 18.sp,
-                      child: FaIcon(
-                        FontAwesomeIcons.code,
+        child: Container(
+          color: Colors.transparent,
+          child: Row(
+            children: [
+              SizedBox(
+                width: 30.w,
+                height: 78.h,
+                child: Stack(
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 3,
+                        height: 110,
                         color: AppConstant.titlecolor,
-                        size: 12.sp,
                       ),
                     ),
-                  ),
-                ],
+                    Center(
+                      child: CircleAvatar(
+                        backgroundColor: AppConstant.primaryColor,
+                        radius: 18.sp,
+                        child: FaIcon(
+                          FontAwesomeIcons.code,
+                          color: AppConstant.titlecolor,
+                          size: 12.sp,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 2.0,
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0,
+                        vertical: 2.0,
+                      ),
+                      child: Text(
+                        period,
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              color: AppConstant.primaryColor,
+                            ),
+                      ),
                     ),
-                    child: Text(
-                      'March 2022 - Present',
-                      style: Theme.of(context).textTheme.headline6!.copyWith(
-                            color: AppConstant.primaryColor,
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0,
+                        vertical: 4.0,
+                      ),
+                      child: Text(
+                        comName,
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 4.0,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 2.0,
+                      ),
+                      child: Text(
+                        post,
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              color: AppConstant.subtitlecolor,
+                            ),
+                      ),
                     ),
-                    child: Text(
-                      'TechDockLabs, Lucknow',
-                      style: Theme.of(context).textTheme.headline4,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 2.0,
+                      ),
+                      child: Text(
+                        desc,
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              color: AppConstant.subtitlecolor,
+                            ),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 2.0,
+                    SizedBox(
+                      height: 10.h,
                     ),
-                    child: Text(
-                      'Flutter Developer - Intern',
-                      style: Theme.of(context).textTheme.headline6!.copyWith(
-                            color: AppConstant.subtitlecolor,
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 2.0,
-                    ),
-                    child: Text(
-                      'Working as a Flutter Intern to enhance my skills',
-                      style: Theme.of(context).textTheme.headline6!.copyWith(
-                            color: AppConstant.subtitlecolor,
-                          ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/d_projects/screens/projects_desktop.dart';
+import 'package:portfolio/screens/d_projects/screens/projects_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ProjectsMain extends StatelessWidget {
@@ -9,14 +11,8 @@ class ProjectsMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: ProjectsMain(
-        height: height,
-        width: width,
-      ),
-      desktop: ProjectsMain(
-        height: height,
-        width: width,
-      ),
+      mobile: const ProjectsMobile(),
+      desktop: const ProjectsDesktop(),
     );
   }
 }

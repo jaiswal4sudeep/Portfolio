@@ -81,15 +81,15 @@ class ProjectsContent extends HookConsumerWidget {
                       width: width,
                     ),
                     ProjectCard(
-                      'Python',
-                      'SpaceWar',
-                      'A Simple Python Game using PyGame',
-                      '2',
+                      'Flutter',
+                      'DartUp',
+                      'Dart and Flutter Learning App',
+                      '0',
                       '0',
                       () {
                         ref
                             .read(urlProvider.notifier)
-                            .openURL(ProjectsURL.spaceWarURL);
+                            .openURL(ProjectsURL.dartUpUrl);
                       },
                     ),
                     SizedBox(
@@ -99,15 +99,15 @@ class ProjectsContent extends HookConsumerWidget {
                       width: width,
                     ),
                     ProjectCard(
-                      'Web',
-                      'Music Player',
-                      'Online Music Player with Limited Songs',
+                      'Python',
+                      'SpaceWar',
+                      'A Simple Python Game using PyGame',
                       '2',
                       '0',
                       () {
                         ref
                             .read(urlProvider.notifier)
-                            .openURL(ProjectsURL.musicPlayerURL);
+                            .openURL(ProjectsURL.spaceWarURL);
                       },
                     ),
                     SizedBox(

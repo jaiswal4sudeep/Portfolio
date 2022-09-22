@@ -19,14 +19,14 @@ mixin SocialMediaURLs {
   static const githubURL = 'https://github.com/jaiswal4sudeep';
   static const techDockLabs = 'https://techdocklabs.com/';
   static const resumeURL =
-      'https://drive.google.com/file/d/1fVFOaz1x6Az3KKZlmItTT-GgEryjkv9c/view?usp=sharing';
+      'https://drive.google.com/file/d/1deRO2SebYBHTLNVOZpOai-hv644EOIdt/view?usp=sharing';
 }
 
 mixin ProjectsURL {
   static const sortItOutURL =
       '${SocialMediaURLs.githubURL}/SortItOut-Sorting_Visualizer';
   static const drawingAppURL = '${SocialMediaURLs.githubURL}/DrawingApp';
-  static const musicPlayerURL = '${SocialMediaURLs.githubURL}/MusicPlayer';
+  static const dartUpUrl = '${SocialMediaURLs.githubURL}/dartup';
   static const spaceWarURL = '${SocialMediaURLs.githubURL}/SpaceWar';
 }
 

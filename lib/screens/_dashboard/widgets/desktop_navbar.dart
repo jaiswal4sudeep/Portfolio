@@ -22,7 +22,7 @@ class DesktopNavbar extends HookConsumerWidget {
             scollToIndex(0, controller);
           },
           style: TextButton.styleFrom(
-            primary: AppConstant.titlecolor,
+            foregroundColor: AppConstant.titlecolor,
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),
@@ -34,7 +34,7 @@ class DesktopNavbar extends HookConsumerWidget {
             scollToIndex(1, controller);
           },
           style: TextButton.styleFrom(
-            primary: AppConstant.titlecolor,
+            foregroundColor: AppConstant.titlecolor,
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),
@@ -46,7 +46,7 @@ class DesktopNavbar extends HookConsumerWidget {
             scollToIndex(2, controller);
           },
           style: TextButton.styleFrom(
-            primary: AppConstant.titlecolor,
+            foregroundColor: AppConstant.titlecolor,
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),
@@ -58,7 +58,7 @@ class DesktopNavbar extends HookConsumerWidget {
             scollToIndex(3, controller);
           },
           style: TextButton.styleFrom(
-            primary: AppConstant.titlecolor,
+            foregroundColor: AppConstant.titlecolor,
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),
@@ -70,7 +70,19 @@ class DesktopNavbar extends HookConsumerWidget {
             scollToIndex(4, controller);
           },
           style: TextButton.styleFrom(
-            primary: AppConstant.titlecolor,
+            foregroundColor: AppConstant.titlecolor,
+          ),
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('Achievements'),
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            scollToIndex(5, controller);
+          },
+          style: TextButton.styleFrom(
+            foregroundColor: AppConstant.titlecolor,
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),

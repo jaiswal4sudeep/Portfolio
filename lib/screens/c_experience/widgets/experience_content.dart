@@ -52,6 +52,17 @@ class ExperienceContent extends HookConsumerWidget {
                             .read(urlProvider.notifier)
                             .openURL(SocialMediaURLs.techDockLabs);
                       },
+                      period: 'March 2022 - June 2022',
+                      comName: 'TechDockLabs, Lucknow',
+                      post: 'Flutter Developer - Intern',
+                      desc: 'Working as a Flutter Intern to enhance my skills',
+                    ),
+                    WorkedOn(
+                      companyInfo: () {},
+                      period: 'July 2022 - Present',
+                      comName: 'Freelancing',
+                      post: 'Flutter Developer',
+                      desc: 'Working as a Freelance Full Stack Flutter',
                     ),
                     SizedBox(
                       height: 10.h,

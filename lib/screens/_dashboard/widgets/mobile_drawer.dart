@@ -67,11 +67,21 @@ class MobileDrawer extends HookConsumerWidget {
           ),
           ListTile(
             title: Text(
-              'Contact',
+              'Achievements',
               style: Theme.of(context).textTheme.headline4,
             ),
             onTap: () {
               scollToIndex(4, controller);
+              Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            title: Text(
+              'Contact',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            onTap: () {
+              scollToIndex(5, controller);
               Navigator.of(context).pop();
             },
           ),
