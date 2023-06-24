@@ -6,7 +6,6 @@ import 'app_constant.dart';
 class AppTheme {
   static final ThemeData light = ThemeData(
     primaryColor: AppConstant.primaryColor,
-    backgroundColor: AppConstant.backgroundColor,
     iconTheme: const IconThemeData(
       color: AppConstant.titlecolor,
     ),
@@ -28,38 +27,40 @@ class AppTheme {
     unselectedWidgetColor: Colors.black45,
     dividerColor: AppConstant.titlecolor,
     textTheme: TextTheme(
-      headline1: GoogleFonts.montserrat(
+      displayLarge: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
         fontSize: 32.sp,
       ),
-      headline2: GoogleFonts.montserrat(
+      displayMedium: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
         fontSize: 24.sp,
       ),
-      headline3: GoogleFonts.montserrat(
+      displaySmall: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
         fontSize: 18.sp,
       ),
-      headline4: GoogleFonts.montserrat(
+      headlineMedium: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
         fontSize: 15.sp,
       ),
-      headline5: GoogleFonts.montserrat(
+      headlineSmall: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
         fontSize: 12.sp,
       ),
-      headline6: GoogleFonts.montserrat(
+      titleLarge: GoogleFonts.montserrat(
         color: AppConstant.titlecolor,
         fontSize: 9.sp,
       ),
-      subtitle1: GoogleFonts.montserrat(
+      titleMedium: GoogleFonts.montserrat(
         color: AppConstant.subtitlecolor,
         fontSize: 12.sp,
       ),
-      subtitle2: GoogleFonts.montserrat(
+      titleSmall: GoogleFonts.montserrat(
         color: AppConstant.subtitlecolor,
         fontSize: 9.sp,
       ),
     ),
+    colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.green, background: AppConstant.backgroundColor),
   );
 }
