@@ -40,7 +40,7 @@ class ExperienceContent extends HookConsumerWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'Experience',
-                        style: Theme.of(context).textTheme.headline3,
+                        style: Theme.of(context).textTheme.displaySmall,
                       ),
                     ),
                     SizedBox(

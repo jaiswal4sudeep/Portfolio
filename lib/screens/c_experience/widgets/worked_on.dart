@@ -66,7 +66,7 @@ class WorkedOn extends StatelessWidget {
                       ),
                       child: Text(
                         period,
-                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
                               color: AppConstant.primaryColor,
                             ),
                       ),
@@ -78,7 +78,7 @@ class WorkedOn extends StatelessWidget {
                       ),
                       child: Text(
                         comName,
-                        style: Theme.of(context).textTheme.headline4,
+                        style: Theme.of(context).textTheme.headlineMedium,
                       ),
                     ),
                     Padding(
@@ -88,7 +88,7 @@ class WorkedOn extends StatelessWidget {
                       ),
                       child: Text(
                         post,
-                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
                               color: AppConstant.subtitlecolor,
                             ),
                       ),
@@ -100,7 +100,7 @@ class WorkedOn extends StatelessWidget {
                       ),
                       child: Text(
                         desc,
-                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
                               color: AppConstant.subtitlecolor,
                             ),
                       ),

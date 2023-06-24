@@ -41,7 +41,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         'Achievements',
-                        style: Theme.of(context).textTheme.headline3,
+                        style: Theme.of(context).textTheme.displaySmall,
                       ),
                     ),
                     Padding(
@@ -51,7 +51,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         '5 Star in HackerRank (Problem Solving, C++, C)',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 11.sp,
                             ),
                       ),
@@ -63,7 +63,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         'Solved more than 500+ problems of DSA & CP in various online platefrom',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 11.sp,
                             ),
                       ),
@@ -75,7 +75,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         '182th international rank in SOF NCO',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 11.sp,
                             ),
                       ),
@@ -87,7 +87,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         'Dart for beginer Certificate (GUVI)',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 11.sp,
                             ),
                       ),
@@ -99,7 +99,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         'Get started with Android Development course at GFG',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 11.sp,
                             ),
                       ),
@@ -111,7 +111,7 @@ class AchvContent extends HookConsumerWidget {
                       ),
                       child: Text(
                         'Web Development with MERN Stack (Tutedude)',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 11.sp,
                             ),
                       ),

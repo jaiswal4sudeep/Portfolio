@@ -32,7 +32,7 @@ class DesktopMailContainer extends HookConsumerWidget {
                 quarterTurns: 1,
                 child: Text(
                   'jaiswal4sudeep@gmail.com',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         letterSpacing: 2.sp,
                         color: AppConstant.preBGColor,
                       ),

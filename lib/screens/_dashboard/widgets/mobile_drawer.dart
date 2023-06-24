@@ -28,7 +28,7 @@ class MobileDrawer extends HookConsumerWidget {
           ListTile(
             title: Text(
               'Home',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             onTap: () {
               scollToIndex(0, controller);
@@ -38,7 +38,7 @@ class MobileDrawer extends HookConsumerWidget {
           ListTile(
             title: Text(
               'About',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             onTap: () {
               scollToIndex(1, controller);
@@ -48,7 +48,7 @@ class MobileDrawer extends HookConsumerWidget {
           ListTile(
             title: Text(
               'Experience',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             onTap: () {
               scollToIndex(2, controller);
@@ -58,7 +58,7 @@ class MobileDrawer extends HookConsumerWidget {
           ListTile(
             title: Text(
               'Projects',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             onTap: () {
               scollToIndex(3, controller);
@@ -68,7 +68,7 @@ class MobileDrawer extends HookConsumerWidget {
           ListTile(
             title: Text(
               'Achievements',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             onTap: () {
               scollToIndex(4, controller);
@@ -78,7 +78,7 @@ class MobileDrawer extends HookConsumerWidget {
           ListTile(
             title: Text(
               'Contact',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             onTap: () {
               scollToIndex(5, controller);

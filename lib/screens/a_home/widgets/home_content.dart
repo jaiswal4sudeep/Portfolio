@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -23,14 +24,14 @@ class HomeContent extends HookConsumerWidget {
       children: [
         Text(
           'HEY THERE',
-          style: Theme.of(context).textTheme.headline3,
+          style: Theme.of(context).textTheme.displaySmall,
         ),
         SizedBox(
           height: 5.h,
         ),
         Text(
           'Sudeep Jaiswal',
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         SizedBox(
           height: 5.h,
@@ -50,22 +51,22 @@ class HomeContent extends HookConsumerWidget {
                 animatedTexts: [
                   TypewriterAnimatedText(
                     'Flutter Developer',
-                    textStyle: Theme.of(context).textTheme.headline2,
+                    textStyle: Theme.of(context).textTheme.displayMedium,
                     cursor: '|',
                   ),
                   TypewriterAnimatedText(
                     'Graphic Designer',
-                    textStyle: Theme.of(context).textTheme.headline2,
+                    textStyle: Theme.of(context).textTheme.displayMedium,
                     cursor: '|',
                   ),
                   TypewriterAnimatedText(
                     'VFX Artist',
-                    textStyle: Theme.of(context).textTheme.headline2,
+                    textStyle: Theme.of(context).textTheme.displayMedium,
                     cursor: '|',
                   ),
                   TypewriterAnimatedText(
                     'Freelancer',
-                    textStyle: Theme.of(context).textTheme.headline2,
+                    textStyle: Theme.of(context).textTheme.displayMedium,
                     cursor: '|',
                   ),
                 ],
@@ -76,32 +77,21 @@ class HomeContent extends HookConsumerWidget {
         SizedBox(
           height: 20.h,
         ),
-        SizedBox(
-          child: TextButton(
-            onPressed: () {
-              ref.read(urlProvider.notifier).openURL(SocialMediaURLs.resumeURL);
-            },
-            style: ButtonStyle(
-              overlayColor: MaterialStateColor.resolveWith(
-                (states) => AppConstant.subtitlecolor.withOpacity(0.2),
-              ),
-              shape: MaterialStateProperty.all(
-                StadiumBorder(
-                  side: BorderSide(
-                    color: AppConstant.titlecolor,
-                    width: 1.sp,
-                  ),
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Text(
-                'Resume',
-                style: Theme.of(context).textTheme.headline5,
-              ),
-            ),
-          ),
+        AnimatedButton(
+          onPress: () {
+            ref.read(urlProvider.notifier).openURL(SocialMediaURLs.resumeURL);
+          },
+          height: 35.h,
+          width: 35.w,
+          text: 'Resume',
+          isReverse: true,
+          selectedTextColor: Colors.black,
+          animatedOn: AnimatedOn.onHover,
+          transitionType: TransitionType.TOP_CENTER_ROUNDER,
+          textStyle: Theme.of(context).textTheme.headlineSmall!,
+          backgroundColor: Colors.black,
+          borderColor: Colors.white,
+          borderWidth: 1,
         ),
       ],
     );

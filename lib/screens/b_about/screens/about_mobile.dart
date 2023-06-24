@@ -50,7 +50,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Education',
-                      style: Theme.of(context).textTheme.headline3,
+                      style: Theme.of(context).textTheme.displaySmall,
                     ),
                   ),
                   const Padding(
@@ -68,7 +68,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Skills',
-                      style: Theme.of(context).textTheme.headline3,
+                      style: Theme.of(context).textTheme.displaySmall,
                     ),
                   ),
                   Padding(
@@ -78,7 +78,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'App Development (Flutter)',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 11.sp,
                           ),
                     ),
@@ -90,7 +90,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'DSA (C/C++, Dart)',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 11.sp,
                           ),
                     ),
@@ -102,7 +102,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Web Development (HTML, CSS, JS, jQuery, Bootstrap)',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 11.sp,
                           ),
                     ),
@@ -114,7 +114,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Graphics and UI/UX Design (Photoshop, Illustrator, Figma)',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 11.sp,
                           ),
                     ),
@@ -126,7 +126,7 @@ class AboutMobile extends StatelessWidget {
                     ),
                     child: Text(
                       'Database (SQL, MongoDB, Firebase)',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 11.sp,
                           ),
                     ),
